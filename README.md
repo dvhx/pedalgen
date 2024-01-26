@@ -192,7 +192,7 @@ amp choose "min thd": true.
 I let the pedalgen run for a two days with different settings and here are few cherry-picked pedals
 out of 600+ pedals it found:
 
-- [batch/cherrypicked/index.html](batch/cherrypicked/index.html)
+- [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html)
 
 # Support
 
