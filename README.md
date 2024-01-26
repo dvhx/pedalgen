@@ -16,7 +16,7 @@ which you can then review and build the ones you like.
 
 # How to use it
 
-- Install and compile [ngspicejs](https://github.com/dvhx/ngspicejs)
+- Install and compile [ngspicejs](https://github.com/dvhx/ngspicejs) (currently only Ubuntu Linux 22.04 is supported)
 - Download pedalgen
 - Edit pedalgen.json config file
 - Run pedalgen.ngjs script
