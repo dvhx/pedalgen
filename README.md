@@ -187,7 +187,7 @@ saved and next pedal will be only saved if it is higher than 0.15. So instead of
 you will have only few, each with slightly higher thd. If you want to find ever-cleaner
 amp choose "min thd": true.
 
-* Example batches *
+# Example batches
 
 I let the pedalgen run for a two days with different settings and here are few cherry-picked pedals
 out of 600+ pedals it found:
@@ -198,5 +198,3 @@ out of 600+ pedals it found:
 
 You can support development on [Patreon](https://www.patreon.com/DusanHalicky) or you can hire me.
 via [Upwork](https://www.upwork.com/freelancers/~013b4c3d6e772fdb01)
-
-
