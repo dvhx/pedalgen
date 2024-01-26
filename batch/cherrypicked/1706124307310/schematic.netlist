@@ -1,0 +1,138 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "470k",
+        "nets": [
+            "out",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "1",
+        "nets": [
+            "net1",
+            0
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "10M",
+        "nets": [
+            "out",
+            0
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "4.7",
+        "nets": [
+            "net1",
+            0
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "470k",
+        "nets": [
+            "vcc",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "47n",
+        "nets": [
+            "vcc",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "22p",
+        "nets": [
+            "out",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "1u",
+        "nets": [
+            0,
+            "vcc"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N2222A",
+        "nets": [
+            "out",
+            "in",
+            "net1"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "2N2222A",
+        "nets": [
+            "in",
+            0,
+            "net1"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "BAT43",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

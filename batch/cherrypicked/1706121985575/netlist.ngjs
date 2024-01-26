@@ -1,0 +1,29 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":2.85});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":5360});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":245000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":2.58e-10});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"out","cathode":"net2","r":10000});
+resistor({"name":"R2","anode":"net2","cathode":"in","r":100000});
+resistor({"name":"R3","anode":"vcc","cathode":"out","r":1000000});
+resistor({"name":"R4","anode":"net2","cathode":"vcc","r":4700});
+resistor({"name":"R5","anode":"net1","cathode":"in","r":10});
+resistor({"name":"R6","anode":"out","cathode":0,"r":47000});
+capacitor({"name":"C1","anode":"net1","cathode":"out","c":4.7e-11});
+capacitor({"name":"C3","anode":"net1","cathode":"out","c":1e-10});
+capacitor({"name":"C4","anode":"net2","cathode":0,"c":2.2e-10});
+capacitor({"name":"C5","anode":"net2","cathode":"out","c":0.00047});
+capacitor({"name":"C6","anode":"out","cathode":"vcc","c":0.000001});
+npn({"name":"Q1","c":"net2","b":"in","e":0,"model":"BC547"});
+npn({"name":"Q2","c":"out","b":0,"e":"net2","model":"BC547"});
+inductor({"name":"L1","anode":"out","cathode":"vcc","l":0.047});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});

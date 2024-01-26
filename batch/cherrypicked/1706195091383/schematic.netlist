@@ -1,0 +1,139 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "10M",
+        "nets": [
+            "net1",
+            "in"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "22k",
+        "nets": [
+            "in",
+            "net1"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "100k",
+        "nets": [
+            "out",
+            "net1"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "100k",
+        "nets": [
+            "out",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "220k",
+        "nets": [
+            "vcc",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "47p",
+        "nets": [
+            0,
+            "vcc"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "470p",
+        "nets": [
+            "vcc",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C4",
+        "value": "10u",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N3904",
+        "nets": [
+            "in",
+            0,
+            "in"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "BC547",
+        "nets": [
+            0,
+            "in",
+            "out"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "BC557",
+        "nets": [
+            0,
+            "out",
+            "in"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

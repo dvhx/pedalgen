@@ -1,0 +1,30 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.00000285});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":5360});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":245000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":2.58e-10});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net4","cathode":"net3","r":2200000});
+resistor({"name":"R2","anode":"net1","cathode":0,"r":1});
+resistor({"name":"R3","anode":"net4","cathode":0,"r":2200000});
+resistor({"name":"R4","anode":"net4","cathode":"out","r":1000000});
+resistor({"name":"R5","anode":"net3","cathode":"vcc","r":1000});
+resistor({"name":"R6","anode":"in","cathode":"net4","r":47});
+resistor({"name":"R7","anode":"vcc","cathode":0,"r":2200});
+resistor({"name":"R8","anode":"net4","cathode":"net2","r":10});
+resistor({"name":"R10","anode":"out","cathode":"net3","r":1000});
+capacitor({"name":"C1","anode":"out","cathode":"net1","c":2.2000000000000003e-9});
+capacitor({"name":"C2","anode":"vcc","cathode":"net2","c":1e-8});
+capacitor({"name":"C3","anode":"net3","cathode":"net1","c":2.2000000000000003e-9});
+npn({"name":"Q1","c":"out","b":"net2","e":"net1","model":"BC547"});
+npn({"name":"Q2","c":"in","b":"net4","e":"net4","model":"2N2222A"});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"2N2222A","kind":"NPN","is":1.44079e-14,"bf":256,"vaf":75.0132,"br":6.12635,"cjc":7.35995e-12,"cje":2.18677e-11,"eg":1.11244,"fc":0.505518,"ikf":0.287123,"ikr":0,"isc":0,"ise":1.44017e-14,"itf":0.595473,"mjc":0.341544,"mje":0.379995,"nc":2,"ne":1.2989,"rb":10,"rc":1,"tf":4.07223e-10,"tr":4.70823e-8,"vjc":0.742352,"vje":0.744323,"vtf":1.72447,"xtb":1.5103,"xtf":3,"xti":3});

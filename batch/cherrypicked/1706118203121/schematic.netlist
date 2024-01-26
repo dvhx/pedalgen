@@ -1,0 +1,155 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "4.7M",
+        "nets": [
+            "out",
+            "net2"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "47k",
+        "nets": [
+            "out",
+            "net3"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "10M",
+        "nets": [
+            "net1",
+            "net4"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "4.7M",
+        "nets": [
+            "net3",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "10M",
+        "nets": [
+            "net2",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "22u",
+        "nets": [
+            "in",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "47u",
+        "nets": [
+            "net3",
+            "net4"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C4",
+        "value": "220p",
+        "nets": [
+            "net4",
+            "net2"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C5",
+        "value": "47p",
+        "nets": [
+            "out",
+            "net4"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C6",
+        "value": "22p",
+        "nets": [
+            "in",
+            "out"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N2222A",
+        "nets": [
+            "net3",
+            "net1",
+            0
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "1N60P",
+        "nets": [
+            "net2",
+            "vcc"
+        ]
+    },
+    {
+        "type": "inductor",
+        "name": "L1",
+        "value": "220u",
+        "nets": [
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

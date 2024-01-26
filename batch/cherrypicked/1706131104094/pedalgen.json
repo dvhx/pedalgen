@@ -1,0 +1,219 @@
+{
+    "seed": 0,
+    "generate_how_many_pedals": 30,
+    "input": {
+        "amplitude": 0.1,
+        "frequency": 196,
+        "ls": 2.85,
+        "rs": 5360,
+        "cp": "258p",
+        "rp": "245k",
+        "capacitor": "10u",
+        "wav": "wav/chord.wav"
+    },
+    "output": {
+        "capacitor": "10u",
+        "load": "50k"
+    },
+    "supply": {
+        "voltage": 9
+    },
+    "complexity": {
+        "net": {
+            "min": 1,
+            "max": 6
+        },
+        "resistor": {
+            "min": 3,
+            "max": 8,
+            "pins": 2,
+            "tune": true,
+            "prefix": "R",
+            "values": "series_e12",
+            "values_min": "1",
+            "values_max": "10M"
+        },
+        "capacitor": {
+            "min": 2,
+            "max": 6,
+            "pins": 2,
+            "tune": true,
+            "prefix": "C",
+            "values": "series_e12",
+            "values_min": "10p",
+            "values_max": "470u"
+        },
+        "transistor_npn": {
+            "min": 0,
+            "max": 1,
+            "pins": 3,
+            "tune": false,
+            "prefix": "Q",
+            "values": [
+                "2N3904",
+                "BC547",
+                "2N2222A"
+            ]
+        },
+        "transistor_pnp": {
+            "min": 1,
+            "max": 1,
+            "pins": 3,
+            "tune": false,
+            "prefix": "Q",
+            "values": [
+                "2N3906",
+                "BC557"
+            ]
+        },
+        "diode": {
+            "min": 0,
+            "max": 2,
+            "pins": 2,
+            "tune": false,
+            "prefix": "D",
+            "values": [
+                "1N34A",
+                "1N4148",
+                "1N5819",
+                "1N60P",
+                "1N5399",
+                "FR207",
+                "FR107",
+                "1N4007",
+                "BAT43",
+                "LED_GREEN",
+                "LED_BLUE",
+                "LED_RED",
+                "LED_YELLOW",
+                "LED_WHITE"
+            ]
+        },
+        "inductor": {
+            "min": 0,
+            "max": 0,
+            "pins": 2,
+            "tune": true,
+            "prefix": "L",
+            "values": "series_e12",
+            "values_min": "1u",
+            "values_max": "100m"
+        }
+    },
+    "ac": {
+        "fstart": 16,
+        "fstop": "10k"
+    },
+    "tran": {
+        "start": 0,
+        "step": "20u",
+        "interval": "20m"
+    },
+    "fft": {
+        "interval": 0.3,
+        "fstop": "2k",
+        "harmonics": 10
+    },
+    "note": "To maximize amount of pedals found use weak gain constraint (0.5@196Hz and 0.1@1kHz) then require moderate thd >5%, and wide current range 40uA-20mA",
+    "constraints": {
+        "gain": [
+            {
+                "frequency": 196,
+                "min": 1.1,
+                "max": 99999,
+                "attempts": 300
+            },
+            {
+                "frequency": 1000,
+                "min": 0.1,
+                "max": 99999,
+                "attempts": 300
+            }
+        ],
+        "current": {
+            "min": "40u",
+            "max": "20m",
+            "attempts": 30
+        },
+        "thd": {
+            "min": 0.55,
+            "max": 99999,
+            "attempts": 50
+        },
+        "even": {
+            "min": 0,
+            "max": 1
+        },
+        "odd": {
+            "min": 0,
+            "max": 1
+        }
+    },
+    "optimize": {
+        "max gain": false,
+        "min current": false,
+        "min thd": false,
+        "max thd": false,
+        "max even": false,
+        "max odd": false,
+        "max thd*even": false,
+        "max thd*odd": false
+    },
+    "first_pedal": [
+        {
+            "type": "resistor",
+            "name": "R1",
+            "value": "68k",
+            "nets": [
+                "vcc",
+                "in"
+            ]
+        },
+        {
+            "type": "resistor",
+            "name": "R2",
+            "value": "12k",
+            "nets": [
+                "in",
+                0
+            ]
+        },
+        {
+            "type": "resistor",
+            "name": "R3",
+            "value": "10k",
+            "nets": [
+                "vcc",
+                "out"
+            ]
+        },
+        {
+            "type": "resistor",
+            "name": "R4",
+            "value": "2k",
+            "nets": [
+                "net1",
+                0
+            ]
+        },
+        {
+            "type": "transistor_npn",
+            "name": "T1",
+            "value": "BC547",
+            "nets": [
+                "out",
+                "in",
+                "net1"
+            ]
+        },
+        {
+            "type": "diode",
+            "name": "D1",
+            "value": "IDEAL",
+            "nets": [
+                0,
+                "load"
+            ]
+        }
+    ]
+}

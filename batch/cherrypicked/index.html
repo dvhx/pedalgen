@@ -1,0 +1,684 @@
+<style>
+img.chart {width: 360px; height: 150px;}
+</style>
+
+<script>
+function audioOnPause(event) {
+  event.target.currentTime = 0;
+}
+var au = document.createElement("audio");
+function audio_play(src) {
+  au.src = src;
+  au.play();
+}
+window.addEventListener("DOMContentLoaded", function () {
+    var id = parseInt(document.location.hash.substr(1), 10);
+    var e = document.getElementById(id);
+    if (!e) { return; };
+    e.scrollIntoView();
+    e.style.backgroundColor = "skyblue";
+});
+</script>
+
+<h1>30 cherrypicked pedals out of 600+ pedals generated in a single day</h1>
+
+<p>Here is small selection of 30 cherrypicked pedals that I chose from 600+ pedals generated in a single day.
+I changed some setting, run a batch of 30 pedals and picked only the interesting ones. Then I changed settings again and repeated.
+All except last 2 pedals expect singlecoil on the input, last 2 pedals expect buffer on the input.</p>
+
+<div id="1706118203121">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706118203121/output.wav')">play</button>
+  <b>pedalgen.1706118203121</b> - 
+  Current 1.8uA, 
+  Gain 3.076x, 
+  THD 37.3%, 
+  Even 71.8%, 
+  Odd 28.2%, 
+  <a href="1706118203121/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,4.7M,out,net2|resistor,R2,47k,out,net3|resistor,R3,10M,net1,net4|resistor,R4,4.7M,net3,vcc|resistor,R5,10M,net2,net1|capacitor,C1,22u,in,net1|capacitor,C2,47u,net3,net4|capacitor,C4,220p,net4,net2|capacitor,C5,47p,out,net4|capacitor,C6,22p,in,out|transistor_npn,Q1,2N2222A,net3,net1,0|diode,D1,1N60P,net2,vcc|inductor,L1,220u,in,net2|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 5C 1Q 1D 1L
+</div>
+<div>Note: another raspy thing</div>
+<div>
+  <img class="chart" src="1706118203121/tran.gif">
+  <img class="chart" src="1706118203121/fft.gif">
+  <img class="chart" src="1706118203121/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706121985575">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706121985575/output.wav')">play</button>
+  <b>pedalgen.1706121985575</b> - 
+  Current 3.3mA, 
+  Gain 1.706x, 
+  THD 41.2%, 
+  Even 65.1%, 
+  Odd 34.9%, 
+  <a href="1706121985575/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,10k,out,net2|resistor,R2,100k,net2,in|resistor,R3,1M,vcc,out|resistor,R4,4.7k,net2,vcc|resistor,R5,10,net1,in|resistor,R6,47k,out,0|capacitor,C1,47p,net1,out|capacitor,C3,100p,net1,out|capacitor,C4,220p,net2,0|capacitor,C5,470u,net2,out|capacitor,C6,1u,out,vcc|transistor_npn,Q1,BC547,net2,in,0|transistor_npn,Q2,BC547,out,0,net2|inductor,L1,47m,out,vcc|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  6R 5C 2Q 1L
+</div>
+<div>Note: transient that looks like matterhorn mountain</div>
+<div>
+  <img class="chart" src="1706121985575/tran.gif">
+  <img class="chart" src="1706121985575/fft.gif">
+  <img class="chart" src="1706121985575/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706124307310">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706124307310/output.wav')">play</button>
+  <b>pedalgen.1706124307310</b> - 
+  Current 40.4uA, 
+  Gain 8.694x, 
+  THD 29.6%, 
+  Even 59.7%, 
+  Odd 40.3%, 
+  <a href="1706124307310/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,470k,out,vcc|resistor,R2,1,net1,0|resistor,R3,10M,out,0|resistor,R4,4.7,net1,0|resistor,R5,470k,vcc,net1|capacitor,C1,47n,vcc,out|capacitor,C2,22p,out,in|capacitor,C3,1u,0,vcc|transistor_npn,Q1,2N2222A,out,in,net1|transistor_npn,Q2,2N2222A,in,0,net1|diode,D1,BAT43,in,vcc|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 3C 2Q 1D
+</div>
+<div>Note: somewhat bassy sound</div>
+<div>
+  <img class="chart" src="1706124307310/tran.gif">
+  <img class="chart" src="1706124307310/fft.gif">
+  <img class="chart" src="1706124307310/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706125233760">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706125233760/output.wav')">play</button>
+  <b>pedalgen.1706125233760</b> - 
+  Current 91.4uA, 
+  Gain 2.655x, 
+  THD 29.5%, 
+  Even 36.3%, 
+  Odd 63.7%, 
+  <a href="1706125233760/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,100k,out,0|resistor,R2,470k,0,net2|resistor,R3,1M,in,out|resistor,R4,2.2k,out,net3|capacitor,C1,22p,net1,out|capacitor,C2,10p,net3,net2|capacitor,C3,47n,in,net1|capacitor,C4,1n,in,out|transistor_npn,Q1,BC547,out,net1,out|transistor_pnp,Q2,BC557,net3,net1,vcc|diode,D1,LED_WHITE,net3,vcc|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  4R 4C 2Q 1D
+</div>
+<div>Note: two distinct sounds</div>
+<div>
+  <img class="chart" src="1706125233760/tran.gif">
+  <img class="chart" src="1706125233760/fft.gif">
+  <img class="chart" src="1706125233760/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706126613259">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706126613259/output.wav')">play</button>
+  <b>pedalgen.1706126613259</b> - 
+  Current 600.1uA, 
+  Gain 2.134x, 
+  THD 70.5%, 
+  Even 54.3%, 
+  Odd 45.7%, 
+  <a href="1706126613259/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,2.2M,0,out|resistor,R2,470k,in,out|resistor,R3,47,vcc,net4|resistor,R4,1M,net3,net4|resistor,R5,10M,out,net2|resistor,R6,4.7,vcc,net4|resistor,R7,2.2,in,net1|resistor,R8,10k,0,net3|capacitor,C1,10n,in,net1|capacitor,C2,100p,out,in|capacitor,C3,2.2n,net2,net3|capacitor,C4,470p,net3,out|transistor_npn,Q1,2N2222A,net4,net3,net4|transistor_pnp,Q2,2N3906,net3,net1,net4|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  8R 4C 2Q
+</div>
+<div>Note: transient with flat ledge and a sharp teeth</div>
+<div>
+  <img class="chart" src="1706126613259/tran.gif">
+  <img class="chart" src="1706126613259/fft.gif">
+  <img class="chart" src="1706126613259/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706129336690">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706129336690/output.wav')">play</button>
+  <b>pedalgen.1706129336690</b> - 
+  Current 15.6mA, 
+  Gain 3.853x, 
+  THD 255.4%, 
+  Even 53.6%, 
+  Odd 46.4%, 
+  <a href="1706129336690/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,220k,in,vcc|resistor,R2,100k,net2,in|resistor,R3,10k,net2,net3|resistor,R4,10k,0,out|resistor,R5,220,0,net1|resistor,R6,1k,net2,in|capacitor,C1,22n,in,out|capacitor,C2,220n,net2,in|capacitor,C3,10n,0,net1|transistor_npn,Q1,2N2222A,in,net1,out|transistor_pnp,Q2,2N3906,net1,net3,vcc|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  6R 3C 2Q
+</div>
+<div>Note: a duck or a squeeky dog toy? a clown?</div>
+<div>
+  <img class="chart" src="1706129336690/tran.gif">
+  <img class="chart" src="1706129336690/fft.gif">
+  <img class="chart" src="1706129336690/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706130734168">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706130734168/output.wav')">play</button>
+  <b>pedalgen.1706130734168</b> - 
+  Current 419.3uA, 
+  Gain 1.154x, 
+  THD 70.3%, 
+  Even 73.2%, 
+  Odd 26.8%, 
+  <a href="1706130734168/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,1M,net5,net4|resistor,R2,4.7M,0,net4|resistor,R3,220k,out,in|resistor,R4,10M,net1,in|resistor,R5,1M,net3,0|resistor,R6,22k,0,vcc|resistor,R7,10,net3,net1|capacitor,C1,22n,net5,in|capacitor,C2,2.2u,0,net1|capacitor,C3,1n,out,0|capacitor,C4,22p,net5,net4|transistor_pnp,Q1,BC557,net3,net5,net4|diode,D1,BAT43,out,net4|diode,D2,1N60P,vcc,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  7R 4C 1Q 2D
+</div>
+<div>Note: a chisel</div>
+<div>
+  <img class="chart" src="1706130734168/tran.gif">
+  <img class="chart" src="1706130734168/fft.gif">
+  <img class="chart" src="1706130734168/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706131104094">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706131104094/output.wav')">play</button>
+  <b>pedalgen.1706131104094</b> - 
+  Current 575.5uA, 
+  Gain 56.053x, 
+  THD 73.8%, 
+  Even 45.5%, 
+  Odd 54.5%, 
+  <a href="1706131104094/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,47k,net1,out|resistor,R2,47k,out,0|resistor,R3,22k,out,0|capacitor,C1,22n,vcc,net1|capacitor,C2,220n,0,vcc|capacitor,C3,470n,net1,0|capacitor,C5,220n,vcc,in|transistor_npn,Q1,2N3904,out,net1,vcc|transistor_pnp,Q2,BC557,out,in,vcc|diode,D1,1N34A,in,net1|diode,D2,LED_WHITE,out,in|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  3R 4C 2Q 2D
+</div>
+<div>Note: a valey with a peak</div>
+<div>
+  <img class="chart" src="1706131104094/tran.gif">
+  <img class="chart" src="1706131104094/fft.gif">
+  <img class="chart" src="1706131104094/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706136751281">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706136751281/output.wav')">play</button>
+  <b>pedalgen.1706136751281</b> - 
+  Current 262.2uA, 
+  Gain 1.184x, 
+  THD 94.1%, 
+  Even 66.8%, 
+  Odd 33.2%, 
+  <a href="1706136751281/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,470k,0,in|resistor,R2,100k,net2,net3|resistor,R3,220k,out,0|resistor,R4,22k,in,0|resistor,R5,1M,in,out|resistor,R6,470k,in,net3|resistor,R7,1k,vcc,net3|capacitor,C1,470p,0,out|capacitor,C2,2.2n,out,vcc|transistor_npn,Q1,BC547,net2,in,0|transistor_pnp,Q2,BC557,out,net2,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  7R 2C 2Q
+</div>
+<div>Note: a capital M</div>
+<div>
+  <img class="chart" src="1706136751281/tran.gif">
+  <img class="chart" src="1706136751281/fft.gif">
+  <img class="chart" src="1706136751281/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706138195038">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706138195038/output.wav')">play</button>
+  <b>pedalgen.1706138195038</b> - 
+  Current 718.7uA, 
+  Gain 1.898x, 
+  THD 87.1%, 
+  Even 68.0%, 
+  Odd 32.0%, 
+  <a href="1706138195038/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,47k,out,0|resistor,R2,470,net4,out|resistor,R3,10,net2,in|resistor,R4,4.7,net2,in|resistor,R5,220k,0,net3|resistor,R6,4.7k,0,net3|resistor,R7,4.7M,net4,net2|resistor,R8,1M,net2,in|capacitor,C1,100p,0,net3|capacitor,C2,470p,0,net4|capacitor,C3,47u,net4,net1|capacitor,C4,4.7n,net4,in|capacitor,C5,2.2n,net3,net1|transistor_npn,Q1,BC547,net4,net1,vcc|transistor_pnp,Q2,2N3906,net3,net2,vcc|diode,D1,LED_GREEN,net1,net3|diode,D2,1N34A,out,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  8R 5C 2Q 2D
+</div>
+<div>Note: a muddy bubbly sound?</div>
+<div>
+  <img class="chart" src="1706138195038/tran.gif">
+  <img class="chart" src="1706138195038/fft.gif">
+  <img class="chart" src="1706138195038/ac.gif" title="???">
+</div>
+<hr>
+
+<div id="1706167566140">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706167566140/output.wav')">play</button>
+  <b>pedalgen.1706167566140</b> - 
+  Current 80.7uA, 
+  Gain 3.568x, 
+  THD 63.6%, 
+  Even 71.0%, 
+  Odd 29.0%, 
+  <a href="1706167566140/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,220k,net1,0|resistor,R2,4.7k,0,out|resistor,R3,220k,vcc,net1|resistor,R4,1M,vcc,out|resistor,R5,4.7M,in,out|capacitor,C1,4.7u,net1,vcc|capacitor,C2,22p,out,vcc|transistor_pnp,Q1,2N3906,out,in,net1|diode,D1,LED_WHITE,in,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 2C 1Q 1D
+</div>
+<div>Note: a bright sound</div>
+<div>
+  <img class="chart" src="1706167566140/tran.gif">
+  <img class="chart" src="1706167566140/fft.gif">
+  <img class="chart" src="1706167566140/ac.gif" title="???">
+</div>
+<hr>
+
+<div id="1706170624677">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706170624677/output.wav')">play</button>
+  <b>pedalgen.1706170624677</b> - 
+  Current 9mA, 
+  Gain 5.958x, 
+  THD 56.5%, 
+  Even 47.3%, 
+  Odd 52.7%, 
+  <a href="1706170624677/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,1k,0,vcc|resistor,R2,1M,vcc,net1|resistor,R3,4.7k,in,net3|resistor,R4,47,net2,net1|resistor,R5,1M,0,net2|capacitor,C1,470p,in,net1|capacitor,C2,10p,0,net2|capacitor,C3,10p,net1,vcc|transistor_npn,Q1,BC547,net2,in,0|transistor_pnp,Q2,BC557,out,net3,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 3C 2Q
+</div>
+<div>Note: a heavy fuzzy capital M</div>
+<div>
+  <img class="chart" src="1706170624677/tran.gif">
+  <img class="chart" src="1706170624677/fft.gif">
+  <img class="chart" src="1706170624677/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706171378967">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706171378967/output.wav')">play</button>
+  <b>pedalgen.1706171378967</b> - 
+  Current 3.8mA, 
+  Gain 15.670x, 
+  THD 63.7%, 
+  Even 65.9%, 
+  Odd 34.1%, 
+  <a href="1706171378967/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,100k,net4,net6|resistor,R2,2.2k,net4,vcc|resistor,R3,47k,net3,net6|resistor,R4,10k,0,net2|resistor,R5,100,net1,net3|resistor,R6,220,out,0|capacitor,C1,100p,0,in|capacitor,C2,100n,out,net1|capacitor,C3,220n,net3,net5|capacitor,C4,100u,vcc,net4|capacitor,C5,47n,net3,0|transistor_npn,Q1,2N2222A,net2,net6,in|transistor_pnp,Q2,BC557,out,in,net4|diode,D1,1N5399,out,net5|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  6R 5C 2Q 1D
+</div>
+<div>Note: a squeeling tires</div>
+<div>
+  <img class="chart" src="1706171378967/tran.gif">
+  <img class="chart" src="1706171378967/fft.gif">
+  <img class="chart" src="1706171378967/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706178020203">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706178020203/output.wav')">play</button>
+  <b>pedalgen.1706178020203</b> - 
+  Current 1.9mA, 
+  Gain 2.987x, 
+  THD 254.7%, 
+  Even 19.5%, 
+  Odd 80.5%, 
+  <a href="1706178020203/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,22k,net1,vcc|resistor,R2,2.2M,vcc,in|resistor,R3,100k,out,net2|resistor,R4,4.7k,out,vcc|resistor,R5,2.2,net1,out|resistor,R6,22k,in,out|capacitor,C1,470p,0,in|capacitor,C2,220n,net3,net4|capacitor,C3,100p,net1,vcc|capacitor,C4,470n,net4,out|transistor_npn,Q1,2N3904,net3,in,net2|transistor_pnp,Q2,2N3906,net2,0,net4|diode,D1,LED_BLUE,net3,net2|inductor,L1,47m,net3,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  6R 4C 2Q 1D 1L
+</div>
+<div>Note: beeeeeeeep</div>
+<div>
+  <img class="chart" src="1706178020203/tran.gif">
+  <img class="chart" src="1706178020203/fft.gif">
+  <img class="chart" src="1706178020203/ac.gif" title="???">
+</div>
+<hr>
+
+<div id="1706179687307">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706179687307/output.wav')">play</button>
+  <b>pedalgen.1706179687307</b> - 
+  Current 164.2uA, 
+  Gain 1.163x, 
+  THD 62.5%, 
+  Even 71.2%, 
+  Odd 28.8%, 
+  <a href="1706179687307/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,10M,out,in|resistor,R2,47k,net3,0|resistor,R3,10k,net2,vcc|resistor,R4,47k,net3,vcc|resistor,R5,1,net3,net4|resistor,R6,10M,net1,net4|resistor,R7,1M,net3,net2|capacitor,C1,47n,net4,net1|capacitor,C2,470p,out,net1|capacitor,C3,10u,net3,net1|capacitor,C4,22p,net2,out|capacitor,C5,22p,vcc,in|transistor_npn,Q1,2N3904,net3,out,net3|transistor_pnp,Q2,2N3906,net2,in,vcc|inductor,L1,22u,out,net2|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  7R 5C 2Q 1L
+</div>
+<div>Note: very jingly</div>
+<div>
+  <img class="chart" src="1706179687307/tran.gif">
+  <img class="chart" src="1706179687307/fft.gif">
+  <img class="chart" src="1706179687307/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706181396812">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706181396812/output.wav')">play</button>
+  <b>pedalgen.1706181396812</b> - 
+  Current 342.9uA, 
+  Gain 3.279x, 
+  THD 35.5%, 
+  Even 54.9%, 
+  Odd 45.1%, 
+  <a href="1706181396812/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,47k,out,net2|resistor,R2,4.7M,0,vcc|resistor,R3,2.2M,vcc,in|resistor,R4,10M,vcc,net2|resistor,R5,4.7M,vcc,net2|resistor,R6,22k,vcc,net3|capacitor,C1,2.2u,net2,out|capacitor,C2,22u,out,net3|capacitor,C3,1n,vcc,in|capacitor,C4,22p,net3,vcc|transistor_npn,Q1,2N3904,out,0,net3|transistor_npn,Q2,BC547,net3,in,0|diode,D1,LED_WHITE,in,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  6R 4C 2Q 1D
+</div>
+<div>Note: Dune II harvester deployed sound?</div>
+<div>
+  <img class="chart" src="1706181396812/tran.gif">
+  <img class="chart" src="1706181396812/fft.gif">
+  <img class="chart" src="1706181396812/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706194031560">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706194031560/output.wav')">play</button>
+  <b>pedalgen.1706194031560</b> - 
+  Current 3.8mA, 
+  Gain 2.007x, 
+  THD 34.4%, 
+  Even 82.2%, 
+  Odd 17.8%, 
+  <a href="1706194031560/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,470,net2,net1|resistor,R2,4.7M,net2,0|resistor,R3,220k,in,out|resistor,R4,100k,net3,net1|resistor,R5,2.2k,vcc,net4|resistor,R6,2.2k,net5,in|resistor,R7,470k,net4,0|resistor,R8,2.2k,0,net2|capacitor,C1,100n,net4,net1|capacitor,C2,470p,net2,net5|capacitor,C3,220n,net4,0|capacitor,C4,220u,vcc,0|capacitor,C5,1u,net3,out|transistor_npn,Q1,2N2222A,net1,out,vcc|transistor_npn,Q2,BC547,0,in,net3|transistor_pnp,Q3,BC557,net4,0,net2|diode,D1,1N5399,net1,net5|diode,D2,1N60P,net5,net2|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  8R 5C 3Q 2D
+</div>
+<div>Note: extra peaks in fft</div>
+<div>
+  <img class="chart" src="1706194031560/tran.gif">
+  <img class="chart" src="1706194031560/fft.gif">
+  <img class="chart" src="1706194031560/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706194368864">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706194368864/output.wav')">play</button>
+  <b>pedalgen.1706194368864</b> - 
+  Current 8.7mA, 
+  Gain 1.143x, 
+  THD 115.4%, 
+  Even 93.1%, 
+  Odd 6.9%, 
+  <a href="1706194368864/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,220k,out,vcc|resistor,R2,470k,in,net3|resistor,R3,4.7M,net4,0|resistor,R4,22,net3,vcc|resistor,R5,220,net4,vcc|resistor,R6,1k,net1,0|resistor,R7,10M,net3,net2|resistor,R8,47k,0,out|capacitor,C1,100n,out,net1|capacitor,C2,1u,out,in|capacitor,C3,2.2u,net1,net3|capacitor,C4,4.7u,net3,net4|transistor_npn,Q1,BC547,net4,in,out|transistor_npn,Q2,2N2222A,net2,0,net4|transistor_pnp,Q3,BC557,vcc,net3,net3|diode,D1,1N5819,net3,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  8R 4C 3Q 1D
+</div>
+<div>Note: Aaaahhhh</div>
+<div>
+  <img class="chart" src="1706194368864/tran.gif">
+  <img class="chart" src="1706194368864/fft.gif">
+  <img class="chart" src="1706194368864/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706194465314">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706194465314/output.wav')">play</button>
+  <b>pedalgen.1706194465314</b> - 
+  Current 84.4uA, 
+  Gain 2.135x, 
+  THD 38.9%, 
+  Even 31.0%, 
+  Odd 69.0%, 
+  <a href="1706194465314/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,2.2k,net1,net2|resistor,R2,100k,net1,out|resistor,R3,100k,vcc,net1|resistor,R4,22k,0,net1|resistor,R5,2.2,in,net3|capacitor,C1,220p,vcc,in|capacitor,C2,22u,vcc,0|capacitor,C3,1n,net2,out|transistor_npn,Q1,BC547,net3,net1,net2|transistor_npn,Q2,2N2222A,net1,net3,0|transistor_pnp,Q3,2N3906,net1,vcc,net2|diode,D1,LED_WHITE,0,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 3C 3Q 1D
+</div>
+<div>Note: Raspy 69% odd harmonics</div>
+<div>
+  <img class="chart" src="1706194465314/tran.gif">
+  <img class="chart" src="1706194465314/fft.gif">
+  <img class="chart" src="1706194465314/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706195091383">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706195091383/output.wav')">play</button>
+  <b>pedalgen.1706195091383</b> - 
+  Current 122.6uA, 
+  Gain 3.162x, 
+  THD 35.9%, 
+  Even 98.3%, 
+  Odd 1.7%, 
+  <a href="1706195091383/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,10M,net1,in|resistor,R2,22k,in,net1|resistor,R3,100k,out,net1|resistor,R4,100k,out,vcc|resistor,R5,220k,vcc,net1|capacitor,C1,47p,0,vcc|capacitor,C2,470p,vcc,out|capacitor,C4,10u,vcc,0|transistor_npn,Q1,2N3904,in,0,in|transistor_npn,Q2,BC547,0,in,out|transistor_pnp,Q3,BC557,0,out,in|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 3C 3Q
+</div>
+<div>Note: Even harmonics 98%</div>
+<div>
+  <img class="chart" src="1706195091383/tran.gif">
+  <img class="chart" src="1706195091383/fft.gif">
+  <img class="chart" src="1706195091383/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706198170316">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706198170316/output.wav')">play</button>
+  <b>pedalgen.1706198170316</b> - 
+  Current 915.7uA, 
+  Gain 3.148x, 
+  THD 174.6%, 
+  Even 25.9%, 
+  Odd 74.1%, 
+  <a href="1706198170316/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,10M,out,in|resistor,R2,4.7k,net3,net1|resistor,R3,4.7M,0,out|resistor,R4,22k,vcc,0|resistor,R5,10M,net1,0|resistor,R6,100k,out,0|resistor,R7,4.7k,net2,net1|resistor,R8,10k,net3,net2|capacitor,C1,470p,out,0|capacitor,C2,220p,0,net1|capacitor,C3,100u,net3,out|capacitor,C4,10p,net1,vcc|transistor_npn,Q1,2N2222A,net2,net1,0|transistor_npn,Q2,BC547,vcc,out,0|transistor_pnp,Q3,BC557,net1,in,vcc|diode,D1,LED_YELLOW,out,0|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  8R 4C 3Q 1D
+</div>
+<div>Note: odd harmonics 74%</div>
+<div>
+  <img class="chart" src="1706198170316/tran.gif">
+  <img class="chart" src="1706198170316/fft.gif">
+  <img class="chart" src="1706198170316/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706200196124">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706200196124/output.wav')">play</button>
+  <b>pedalgen.1706200196124</b> - 
+  Current 585.2uA, 
+  Gain 5.163x, 
+  THD 35.2%, 
+  Even 18.5%, 
+  Odd 81.5%, 
+  <a href="1706200196124/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,22k,vcc,0|resistor,R2,100k,out,net1|resistor,R3,4.7M,vcc,in|resistor,R4,47k,net2,vcc|resistor,R5,47k,net1,net2|capacitor,C1,1n,vcc,0|capacitor,C2,10n,vcc,net2|capacitor,C3,220p,in,out|transistor_npn,Q1,2N2222A,in,0,vcc|transistor_npn,Q2,2N2222A,net2,in,0|transistor_pnp,Q3,BC557,net1,in,net1|diode,D1,1N4007,0,vcc|diode,D2,LED_GREEN,net2,0|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 3C 3Q 2D
+</div>
+<div>Note: odd harmonics 81%</div>
+<div>
+  <img class="chart" src="1706200196124/tran.gif">
+  <img class="chart" src="1706200196124/fft.gif">
+  <img class="chart" src="1706200196124/ac.gif" title="???">
+</div>
+<hr>
+
+
+
+<div id="1706207448261">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706207448261/output.wav')">play</button>
+  <b>pedalgen.1706207448261</b> - 
+  Current 161uA, 
+  Gain 60.486x, 
+  THD 0.4%, 
+  Even 99.8%, 
+  Odd 0.2%, 
+  <a href="1706207448261/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,2.2M,in,vcc|resistor,R2,1M,vcc,net1|resistor,R3,47,net3,net4|resistor,R4,10k,net4,net3|resistor,R5,100,in,net4|resistor,R6,2.2M,net3,out|resistor,R7,22k,0,out|resistor,R8,220k,in,net1|resistor,R9,10M,net2,in|capacitor,C1,22p,out,net2|capacitor,C3,47p,vcc,net3|transistor_npn,Q1,2N2222A,in,0,net2|transistor_npn,Q2,BC547,net1,vcc,net2|transistor_pnp,Q3,BC557,out,net4,vcc|diode,D1,1N4007,net2,net3|diode,D2,LED_GREEN,in,net2|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  9R 2C 3Q 2D
+</div>
+<div>Note: 60x gain clean amp</div>
+<div>
+  <img class="chart" src="1706207448261/tran.gif">
+  <img class="chart" src="1706207448261/fft.gif">
+  <img class="chart" src="1706207448261/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706213950709">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706213950709/output.wav')">play</button>
+  <b>pedalgen.1706213950709</b> - 
+  Current 2mA, 
+  Gain 29.798x, 
+  THD 20.8%, 
+  Even 83.3%, 
+  Odd 16.7%, 
+  <a href="1706213950709/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,1M,0,vcc|resistor,R2,4.7k,0,vcc|resistor,R3,220k,in,net3|resistor,R4,470,net1,out|resistor,R5,4.7M,in,0|resistor,R6,100k,vcc,out|resistor,R7,100k,net4,vcc|resistor,R8,1M,net4,net1|resistor,R9,47,in,net2|capacitor,C1,470u,out,net1|capacitor,C2,100p,in,out|capacitor,C3,100n,0,net3|transistor_npn,Q1,BC547,net4,net1,vcc|transistor_npn,Q2,BC547,net1,net2,0|transistor_pnp,Q3,BC557,0,vcc,net1|transistor_pnp,Q4,2N3906,net3,in,net1|diode,D1,1N34A,in,net2|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  9R 3C 4Q 1D
+</div>
+<div>Note: 4bjt rough</div>
+<div>
+  <img class="chart" src="1706213950709/tran.gif">
+  <img class="chart" src="1706213950709/fft.gif">
+  <img class="chart" src="1706213950709/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706216281120">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706216281120/output.wav')">play</button>
+  <b>pedalgen.1706216281120</b> - 
+  Current 51.6uA, 
+  Gain 1.418x, 
+  THD 243.3%, 
+  Even 61.6%, 
+  Odd 38.4%, 
+  <a href="1706216281120/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,220,in,out|resistor,R2,4.7,net5,net4|resistor,R3,4.7M,net3,net2|resistor,R4,2.2M,in,net3|resistor,R5,47k,vcc,net5|resistor,R6,10M,net2,net1|resistor,R7,10k,net1,0|capacitor,C1,10u,in,out|capacitor,C2,470p,net3,0|capacitor,C3,220p,net1,net4|capacitor,C4,470n,net3,net5|transistor_npn,Q1,2N3904,net4,vcc,out|transistor_npn,Q2,2N2222A,net5,0,net2|transistor_pnp,Q3,BC557,in,net4,0|transistor_pnp,Q4,BC557,0,net3,out|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  7R 4C 4Q
+</div>
+<div>Note: 4bjt weird</div>
+<div>
+  <img class="chart" src="1706216281120/tran.gif">
+  <img class="chart" src="1706216281120/fft.gif">
+  <img class="chart" src="1706216281120/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706217770270">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706217770270/output.wav')">play</button>
+  <b>pedalgen.1706217770270</b> - 
+  Current 244.9uA, 
+  Gain 1.997x, 
+  THD 22.5%, 
+  Even 59.3%, 
+  Odd 40.7%, 
+  <a href="1706217770270/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,22k,net3,out|resistor,R2,100k,net2,in|resistor,R3,1M,net1,in|resistor,R4,2.2,net2,out|resistor,R5,470k,0,net1|capacitor,C1,1n,net4,net2|capacitor,C2,10u,net1,in|transistor_npn,Q1,BC547,vcc,net3,net4|transistor_npn,Q2,2N2222A,net1,net2,net3|transistor_pnp,Q3,2N3906,net2,net4,vcc|transistor_pnp,Q4,BC557,vcc,net3,net2|diode,D1,BAT43,net2,in|diode,D2,LED_YELLOW,net2,out|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  5R 2C 4Q 2D
+</div>
+<div>Note: Fast heartbeat</div>
+<div>
+  <img class="chart" src="1706217770270/tran.gif">
+  <img class="chart" src="1706217770270/fft.gif">
+  <img class="chart" src="1706217770270/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706218984287">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706218984287/output.wav')">play</button>
+  <b>pedalgen.1706218984287</b> - 
+  Current 44.8uA, 
+  Gain 18.464x, 
+  THD 13.4%, 
+  Even 75.0%, 
+  Odd 25.0%, 
+  <a href="1706218984287/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,4.7M,net4,out|resistor,R2,2.2,out,net3|resistor,R3,4.7M,net4,net1|resistor,R4,1M,net3,net4|resistor,R5,2.2,out,net2|resistor,R6,47k,net1,net2|resistor,R7,470,net1,net2|resistor,R8,4.7k,net1,out|resistor,R9,220,net1,net2|resistor,R10,220k,net3,0|capacitor,C1,10n,net4,in|capacitor,C2,22n,net2,in|transistor_npn,Q1,2N3904,net4,net2,net1|transistor_npn,Q2,BC547,net4,in,out|transistor_pnp,Q3,BC557,net2,net4,vcc|transistor_pnp,Q4,BC557,net4,net1,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  10R 2C 4Q
+</div>
+<div>Note: spooky</div>
+<div>
+  <img class="chart" src="1706218984287/tran.gif">
+  <img class="chart" src="1706218984287/fft.gif">
+  <img class="chart" src="1706218984287/ac.gif" title="???">
+</div>
+<hr>
+
+
+<div id="1706219328162">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706219328162/output.wav')">play</button>
+  <b>pedalgen.1706219328162</b> - 
+  Current 6.2mA, 
+  Gain 3.742x, 
+  THD 169.9%, 
+  Even 40.7%, 
+  Odd 59.3%, 
+  <a href="1706219328162/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,470,vcc,net5|resistor,R2,47k,net2,out|resistor,R3,47k,out,0|resistor,R4,2.2M,vcc,net1|resistor,R5,1k,net5,0|resistor,R6,22,net4,in|resistor,R7,220k,in,net2|resistor,R8,220k,net1,net3|resistor,R9,1M,net2,vcc|capacitor,C1,10p,vcc,out|capacitor,C2,22p,net5,in|capacitor,C3,22p,net1,0|capacitor,C4,220p,net2,net3|capacitor,C5,4.7n,net4,vcc|transistor_npn,Q1,2N2222A,vcc,in,net3|transistor_npn,Q2,2N2222A,net4,net3,net1|transistor_pnp,Q3,2N3906,net1,net3,net4|transistor_pnp,Q4,BC557,net5,net1,out|diode,D1,1N5399,net1,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  9R 5C 4Q 1D
+</div>
+<div>Note: jet engine</div>
+<div>
+  <img class="chart" src="1706219328162/tran.gif">
+  <img class="chart" src="1706219328162/fft.gif">
+  <img class="chart" src="1706219328162/ac.gif" title="???">
+</div>
+<hr>
+
+<div id="1706255081042">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706255081042/output.wav')">play</button>
+  <b>pedalgen.1706255081042</b> - 
+  Current 6mA, 
+  Gain 36.123x, 
+  THD 11.7%, 
+  Even 85.6%, 
+  Odd 14.4%, 
+  <a href="1706255081042/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,2.2M,net4,net3|resistor,R2,1,net1,0|resistor,R3,2.2M,net4,0|resistor,R4,1M,net4,out|resistor,R5,1k,net3,vcc|resistor,R6,47,in,net4|resistor,R7,2.2k,vcc,0|resistor,R8,10,net4,net2|resistor,R10,1k,out,net3|capacitor,C1,2.2n,out,net1|capacitor,C2,10n,vcc,net2|capacitor,C3,2.2n,net3,net1|transistor_npn,Q1,BC547,out,net2,net1|transistor_npn,Q2,2N2222A,in,net4,net4|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  9R 3C 2Q
+</div>
+<div>Note: Flat AC because of low inductance input (e.g. buffer on input, all previous pedals used singlecoil)</div>
+<div>
+  <img class="chart" src="1706255081042/tran.gif">
+  <img class="chart" src="1706255081042/fft.gif">
+  <img class="chart" src="1706255081042/ac.gif" title="???">
+</div>
+<hr>
+
+<div id="1706254989502">
+  <button class="play" onclick="audio_play('../../wav/chord.wav')">input</button>
+  <button class="play" onclick="audio_play('1706254989502/output.wav')">play</button>
+  <b>pedalgen.1706254989502</b> - 
+  Current 54.2uA, 
+  Gain 1.483x, 
+  THD 43.4%, 
+  Even 46.6%, 
+  Odd 53.4%, 
+  <a href="1706254989502/pedalgen.json">pedalgen.json</a>, 
+  <a href="https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,4.7M,net1,net2|resistor,R2,47k,out,net4|resistor,R3,1M,net2,vcc|resistor,R4,47k,net3,in|resistor,R5,22k,0,net1|resistor,R6,100k,net5,vcc|resistor,R7,22,out,net5|resistor,R8,47k,net1,in|resistor,R9,4.7k,net4,net5|capacitor,C1,47n,in,net2|capacitor,C2,100p,0,net4|capacitor,C3,10u,out,net1|capacitor,C5,10n,0,net3|transistor_npn,Q1,2N3904,out,net2,net3|transistor_npn,Q2,2N3904,vcc,net4,net3|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load">Schematic</a>, 
+  9R 4C 2Q
+</div>
+<div>Note: weird sound with low inductance input (e.g. buffer on input)</div>
+<div>
+  <img class="chart" src="1706254989502/tran.gif">
+  <img class="chart" src="1706254989502/fft.gif">
+  <img class="chart" src="1706254989502/ac.gif" title="???">
+</div>
+<hr>
+
+

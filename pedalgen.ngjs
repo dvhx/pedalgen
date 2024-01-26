@@ -1,0 +1,273 @@
+#!/usr/bin/env ngspicejs
+// Pedalgen v0.1 - generate random guitar pedals
+// linter: ngspicejs-lint
+"use strict";
+
+// include sources
+var tune_gain = include('src/tune_gain.js');
+var valid_current = include('src/valid_current.js');
+var valid_thd = include('src/valid_thd.js');
+var tran_check = include('src/tran_check.js');
+var randomize_values = include('src/randomize_values.js');
+var cache_element_by_name = include('src/cache_element_by_name.js');
+var cache_net_element_pin = include('src/cache_net_element_pin.js');
+var cache_edges = include('src/cache_edges.js');
+var edge_exists = include('src/edge_exists.js');
+var remove_parallel_capacitors = include('src/remove_parallel_capacitors.js');
+var cache_net_element_type = include('src/cache_net_element_type.js');
+var remove_series = include('src/remove_series.js');
+var generate_pedal = include('src/generate_pedal.js');
+var build_circuit = include('src/build_circuit.js');
+var elements_to_short_bom = include('src/elements_to_short_bom.js');
+var optimize_one = include('src/optimize_one.js');
+
+ignore(cache_element_by_name, cache_net_element_pin, cache_net_element_type,
+    cache_edges, edge_exists, remove_parallel_capacitors, remove_series);
+
+// variables
+var config = file_read_json('pedalgen.json'); // config file from current directory
+var reason = tally('Reason');   // Why was generated pedal wrong
+var batch = 'batch/' + (new Date()).toISOString().substr(0, 19).replace('T', '--').replace(/[\:]+/g, '-') + '/'; // batch/2023-12-21--08-30-57/
+dir_create(batch);
+
+// save copy of config file
+file_write_json(batch + 'pedalgen.json', config, 4);
+
+// validate config
+if (Object.values(config.optimize).filter((a) => a).length > 1) {
+    error('You can only optimize one value, make sure in config.optimize only 1 property is true!');
+    exit(1);
+}
+
+// replace Math.random with seeded Mersenne twister
+if (config.seed > 0) {
+    warn('Using random seed ' + config.seed + ' (and same config) will always generate the same pedals, use it only for debugging!');
+    mersenne_twister(config.seed).replace_math_random();
+}
+
+// header of index.html
+var html = [];
+html.push('<style>');
+html.push('img.chart {width: 360px; height: 150px;}');
+html.push('</style>');
+html.push('');
+html.push('<script>');
+html.push('function audioOnPause(event) {');
+html.push('  event.target.currentTime = 0;');
+html.push('}');
+html.push('var au = document.createElement("audio");');
+html.push('function audio_play(src) {');
+html.push('  au.src = src;');
+html.push('  au.play();');
+html.push('}');
+html.push('window.addEventListener("DOMContentLoaded", function () {');
+html.push('    var id = parseInt(document.location.hash.substr(1), 10);');
+html.push('    var e = document.getElementById(id);');
+html.push('    if (!e) { return; };');
+html.push('    e.scrollIntoView();');
+html.push('    e.style.backgroundColor = "skyblue";');
+html.push('});');
+html.push('</script>');
+html.push('');
+html.push('<h1>pedalgen v0.1 - ' + batch + '</h1>');
+
+// main loop
+var pedals_found = 0;
+var topo_counter = 0;
+while (true) {
+    echo_progress();
+    // generate pedal
+    topo_counter++;
+    echo('Generating new topology #' + topo_counter);
+    var pedal = generate_pedal(config.complexity);
+    // build ngspicejs circuit
+    var cir = build_circuit(pedal.elements);
+    // check for singular matrix
+    if (singular_matrix()) {
+        reason.inc('Simulation: Singular matrix');
+        continue;
+    }
+    // check for timestep too small
+    if (tran_check()) {
+        reason.inc('Simulation: Timestep too small');
+        continue;
+    }
+    // first do the gain alone to skip really poor topologies
+    if (!tune_gain(config, randomize_values)) {
+        reason.inc('Tune: First gain failed');
+        continue;
+    }
+
+    // tune gain, check current and thd
+    var passed = false;
+    var score = 0;
+    for (var i = 0; i < 100; i++) {
+        echo_progress();
+
+        if (i > 0 && !tune_gain(config, randomize_values)) {
+            reason.inc('Tune: Second gain failed');
+            continue;
+        }
+        score++;
+
+        if (!valid_current(config)) {
+            reason.inc('Tune: Current failed');
+            randomize_values();
+            continue;
+        }
+        score++;
+
+        if (!valid_thd(config)) {
+            reason.inc('Tune: THD failed');
+            randomize_values();
+            continue;
+        }
+        score++;
+        passed = true;
+        break;
+    }
+    echo('  Score', score, i);
+    if (!passed) {
+        continue;
+    }
+
+    // redo all analyses for passing pedal
+    echo('  Pedal found!');
+    var t = tran().start(config.tran.start).step(config.tran.step).interval(config.tran.interval).run();
+    var current = t.rms('I(V2)');
+    var a = ac().fstart(config.ac.fstart).fstop(config.ac.fstop).run();
+    var gain = a.value_at('V(load)', config.input.frequency);
+    var gain_tran = t.data['V(load)'].slice(100).amplitude() / config.input.amplitude;
+    var f = fft().interval(config.fft.interval).fstop(config.fft.fstop).run('V(load)');
+    var thd = f.thd(config.input.frequency, config.fft.harmonics);
+    var even = f.even(config.input.frequency, config.fft.harmonics);
+    var odd = f.odd(config.input.frequency, config.fft.harmonics);
+    echo('  Current', current.toEng(), 'gain', gain, 'gain_tran', gain_tran, 'thd', thd, 'even', even, 'odd', odd);
+
+    // optimize
+    if (!optimize_one('max gain', gain)) {
+        continue;
+    }
+    if (!optimize_one('min current', current)) {
+        continue;
+    }
+    if (!optimize_one('min thd', thd)) {
+        continue;
+    }
+    if (!optimize_one('max thd', thd)) {
+        continue;
+    }
+    if (!optimize_one('max even', even)) {
+        continue;
+    }
+    if (!optimize_one('max odd', odd)) {
+        continue;
+    }
+    if (!optimize_one('max thd*even', thd * even)) {
+        continue;
+    }
+    if (!optimize_one('max thd*odd', thd * odd)) {
+        continue;
+    }
+
+    // show charts
+    t.chart('V(load)', {width: 360, height: 150});
+    f.chart_db('V(load)', {width: 360, height: 150});
+    a.chart('V(load)', {width: 360, height: 150});
+
+    // create pedal folder
+    var timestamp = Date.now();
+    var folder = timestamp.toString() + '/';
+    var path = batch + folder;
+    dir_create(path);
+
+    // save charts as gifs
+    t.last_chart.gif(path + 'tran.gif');
+    f.last_chart.gif(path + 'fft.gif');
+    a.last_chart.gif(path + 'ac.gif');
+
+    // write other files
+    file_write_json(path + 'netlist.json', netlist_export(), 4);
+    file_write_json(path + 'schematic.netlist', netlist_export_schematic(['RS','LS','V1','CP','RP','RLOAD']), 4);
+    file_write_ngspicejs(path + 'netlist.ngjs');
+    file_mode(path + 'netlist.ngjs', parseInt('755', 8));
+
+    // create sharable url
+    var schematic = netlist_export_schematic_url(['RS','LS','V1', 'CP','RP','RLOAD']);
+    // add ground symbol
+    schematic += '|ground,Ground,,0';
+    // add in and out connectors
+    schematic += '|connector,IN,,sig|connector,OUT,,load';
+    file_write(path + 'schematic.url', schematic);
+
+    // write summary.json
+    var summary = {
+        timestamp,
+        path,
+        folder,
+        current,
+        gain: gain,
+        thd,
+        even,
+        odd,
+        schematic
+    };
+    file_write_json(path + 'summary.json', summary, 4);
+
+    // replace pickup sinewave with audio source and save the output
+    if (config.input.wav) {
+        cir.v1.remove();
+        cir.v1 = audio('V1', 'sig2', 0).filename(config.input.wav || 'wav/chord.wav').v(config.input.amplitude);
+        // add tran and wav saving command to saved script (if user wants to re-run it later)
+        file_write_ngspicejs(path + 'netlist_wav.ngjs');
+        var src = file_read(path + 'netlist_wav.ngjs').split('\n');
+        src.push('echo("running tran");');
+        src.push('var t = tran().interval(3.5).step("20.833u").run();');
+        src.push('echo("saving wav");');
+        src.push('file_write_wav("output.wav", t.data.time, t.data["V(load)"], undefined);');
+        src.push('echo("done");');
+        src = src.join('\n').replace('wav/chord.m', '../../../wav/chord.wav');
+        file_write(path + 'netlist_wav.ngjs', src);
+        file_mode(path + 'netlist_wav.ngjs', parseInt('755', 8));
+        // run tran and save wav
+        echo('Saving audio...');
+        t = tran().interval(cir.v1.get_duration() - 0.001).step('20.833u').run();
+        file_write_wav(path + 'output.wav', t.data.time, t.data['V(load)'], undefined);
+    }
+
+    // add pedal to index.html
+    html.push('<div id="' + summary.timestamp + '">');
+    html.push('  <button class="play" onclick="audio_play(\'../../' + config.input.wav + '\')">input</button>');
+    html.push('  <button class="play" onclick="audio_play(\'' + summary.timestamp + '/output.wav\')">play</button>');
+    html.push('  <b>pedalgen.' + summary.timestamp + '</b> - ');
+    html.push('  Current ' + summary.current.toEng() + 'A, ');
+    html.push('  Gain ' + summary.gain.toFixed(3) + 'x, ');
+    html.push('  THD ' + (100 * summary.thd).toFixed(1) + '%, ');
+    html.push('  Even ' + (100 * summary.even).toFixed(1) + '%, ');
+    html.push('  Odd ' + (100 * summary.odd).toFixed(1) + '%, ');
+    html.push('  <a href="' + summary.schematic + '">Schematic</a>, ');
+    html.push('  ' + elements_to_short_bom(pedal.elements));
+    html.push('</div>');
+    html.push('<div>');
+    var ac_title = '???'; //p.ac_points.map(a => a.value.toFixed(3) + 'V @' + a.frequency.toEng() + 'Hz').join(', ');
+    html.push('  <img class="chart" src="' + summary.folder + 'tran.gif">');
+    html.push('  <img class="chart" src="' + summary.folder + 'fft.gif">');
+    html.push('  <img class="chart" src="' + summary.folder + 'ac.gif" title="' + ac_title + '">');
+    html.push('</div>');
+    html.push('<hr>');
+    file_write(batch + 'index.html', html.join('\n'));
+
+    // beep
+    echo('pedal ' + (pedals_found + 1) + '/' + config.generate_how_many_pedals + ' found');
+    beep();
+
+    // stop after enough pedals are found
+    pedals_found++;
+    if (pedals_found >= config.generate_how_many_pedals) {
+        reason.echo();
+        file_write_json(batch + 'reason.json', reason.counts, 4);
+        echo('Generated ' + pedals_found + ' pedals in ' + (script_ms() / 1000 / 60).toFixed(0) + ' minutes');
+        break;
+    }
+}
+

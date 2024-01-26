@@ -1,0 +1,28 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":2.85});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":5360});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":245000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":2.58e-10});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net1","cathode":"in","r":10000000});
+resistor({"name":"R2","anode":"in","cathode":"net1","r":22000});
+resistor({"name":"R3","anode":"out","cathode":"net1","r":100000});
+resistor({"name":"R4","anode":"out","cathode":"vcc","r":100000});
+resistor({"name":"R5","anode":"vcc","cathode":"net1","r":220000});
+capacitor({"name":"C1","anode":0,"cathode":"vcc","c":4.7e-11});
+capacitor({"name":"C2","anode":"vcc","cathode":"out","c":4.7e-10});
+capacitor({"name":"C4","anode":"vcc","cathode":0,"c":0.000009999999999999999});
+npn({"name":"Q1","c":"in","b":0,"e":"in","model":"2N3904"});
+npn({"name":"Q2","c":0,"b":"in","e":"out","model":"BC547"});
+pnp({"name":"Q3","c":0,"b":"out","e":"in","model":"BC557"});
+bjt_model({"name":"2N3904","kind":"NPN","bf":205,"is":1.26547e-10,"vaf":998.433,"ptf":0,"rbm":0.632479,"vtf":8.74751,"isc":2.31414e-9,"vjs":0.749273,"ne":3.31282,"re":0.0000995788,"tr":6.85197e-8,"irb":50.5208,"fc":0.512359,"ikf":0.0273521,"xtb":0.100589,"cjc":3.78079e-12,"tf":4.23873e-10,"af":1,"vjc":0.402828,"nc":1.99306,"ikr":0.274173,"br":20.7773,"var":9.40218,"cjs":0,"kf":0,"mje":0.256354,"nr":2.89455,"rb":5.83249,"nf":1.50082,"mjc":0.239341,"cje":4.67206e-12,"xti":1,"vje":0.404156,"rc":2.65908,"mjs":0.502839,"itf":0.0106626,"ise":2.29887e-9,"xcjc":0.79747,"xtf":0.913471,"eg":1.04619});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"BC557","kind":"PNP","bf":333,"is":1.16271e-14,"vaf":84.3249,"nf":0.989742,"ne":1.41235,"rc":0.960001,"rb":0.202287,"re":0.399351,"cje":1.59939e-11,"cjc":1.05351e-11,"br":13.1312,"ikf":0.100695,"tf":4.98737e-10,"vjc":0.563043,"ikr":0.0120877,"nc":1.11161,"isc":1.44419e-14,"mjc":0.413293,"var":8.16837,"ise":5.01187e-14,"tr":7.33771e-8,"nr":0.999585});

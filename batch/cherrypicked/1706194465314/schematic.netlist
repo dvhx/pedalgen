@@ -1,0 +1,148 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "2.2k",
+        "nets": [
+            "net1",
+            "net2"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "100k",
+        "nets": [
+            "net1",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "100k",
+        "nets": [
+            "vcc",
+            "net1"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "22k",
+        "nets": [
+            0,
+            "net1"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "2.2",
+        "nets": [
+            "in",
+            "net3"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "220p",
+        "nets": [
+            "vcc",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "22u",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "1n",
+        "nets": [
+            "net2",
+            "out"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "BC547",
+        "nets": [
+            "net3",
+            "net1",
+            "net2"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "2N2222A",
+        "nets": [
+            "net1",
+            "net3",
+            0
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "2N3906",
+        "nets": [
+            "net1",
+            "vcc",
+            "net2"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "LED_WHITE",
+        "nets": [
+            0,
+            "net1"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

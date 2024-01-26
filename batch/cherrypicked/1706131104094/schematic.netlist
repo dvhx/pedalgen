@@ -1,0 +1,138 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "47k",
+        "nets": [
+            "net1",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "47k",
+        "nets": [
+            "out",
+            0
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "22k",
+        "nets": [
+            "out",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "22n",
+        "nets": [
+            "vcc",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "220n",
+        "nets": [
+            0,
+            "vcc"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "470n",
+        "nets": [
+            "net1",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C5",
+        "value": "220n",
+        "nets": [
+            "vcc",
+            "in"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N3904",
+        "nets": [
+            "out",
+            "net1",
+            "vcc"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q2",
+        "value": "BC557",
+        "nets": [
+            "out",
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "1N34A",
+        "nets": [
+            "in",
+            "net1"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D2",
+        "value": "LED_WHITE",
+        "nets": [
+            "out",
+            "in"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

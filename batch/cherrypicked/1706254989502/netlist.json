@@ -1,0 +1,276 @@
+[
+    {
+        "type": "inductor",
+        "attr": {
+            "name": "LS",
+            "anode": "sig",
+            "cathode": "sig1",
+            "l": 0.00000285
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RS",
+            "anode": "sig1",
+            "cathode": "sig2",
+            "r": 5360
+        }
+    },
+    {
+        "type": "sinewave",
+        "attr": {
+            "delay": 0,
+            "offset": 0,
+            "damping": 0,
+            "phase": 0,
+            "dc_value": 0,
+            "ac_mag": 1,
+            "ac_phase": 0,
+            "name": "V1",
+            "anode": "sig2",
+            "cathode": 0,
+            "v": 0.1,
+            "f": 196
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RP",
+            "anode": "sig",
+            "cathode": 0,
+            "r": 245000
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CP",
+            "anode": "sig",
+            "cathode": 0,
+            "c": 2.58e-10
+        }
+    },
+    {
+        "type": "battery",
+        "attr": {
+            "rs": 0,
+            "name": "V2",
+            "anode": "vcc",
+            "cathode": 0,
+            "v": 9
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CIN",
+            "anode": "sig",
+            "cathode": "in",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "COUT",
+            "anode": "out",
+            "cathode": "load",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RLOAD",
+            "anode": "load",
+            "cathode": 0,
+            "r": 50000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R1",
+            "anode": "net1",
+            "cathode": "net2",
+            "r": 4700000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R2",
+            "anode": "out",
+            "cathode": "net4",
+            "r": 47000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R3",
+            "anode": "net2",
+            "cathode": "vcc",
+            "r": 1000000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R4",
+            "anode": "net3",
+            "cathode": "in",
+            "r": 47000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R5",
+            "anode": 0,
+            "cathode": "net1",
+            "r": 22000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R6",
+            "anode": "net5",
+            "cathode": "vcc",
+            "r": 100000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R7",
+            "anode": "out",
+            "cathode": "net5",
+            "r": 22
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R8",
+            "anode": "net1",
+            "cathode": "in",
+            "r": 47000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R9",
+            "anode": "net4",
+            "cathode": "net5",
+            "r": 4700
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C1",
+            "anode": "in",
+            "cathode": "net2",
+            "c": 4.7000000000000004e-8
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C2",
+            "anode": 0,
+            "cathode": "net4",
+            "c": 1e-10
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C3",
+            "anode": "out",
+            "cathode": "net1",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C5",
+            "anode": 0,
+            "cathode": "net3",
+            "c": 1e-8
+        }
+    },
+    {
+        "type": "npn",
+        "attr": {
+            "name": "Q1",
+            "c": "out",
+            "b": "net2",
+            "e": "net3",
+            "model": "2N3904"
+        }
+    },
+    {
+        "type": "npn",
+        "attr": {
+            "name": "Q2",
+            "c": "vcc",
+            "b": "net4",
+            "e": "net3",
+            "model": "2N3904"
+        }
+    },
+    {
+        "type": "bjt_model",
+        "attr": {
+            "name": "2N3904",
+            "kind": "NPN",
+            "bf": 205,
+            "is": 1.26547e-10,
+            "vaf": 998.433,
+            "ptf": 0,
+            "rbm": 0.632479,
+            "vtf": 8.74751,
+            "isc": 2.31414e-9,
+            "vjs": 0.749273,
+            "ne": 3.31282,
+            "re": 0.0000995788,
+            "tr": 6.85197e-8,
+            "irb": 50.5208,
+            "fc": 0.512359,
+            "ikf": 0.0273521,
+            "xtb": 0.100589,
+            "cjc": 3.78079e-12,
+            "tf": 4.23873e-10,
+            "af": 1,
+            "vjc": 0.402828,
+            "nc": 1.99306,
+            "ikr": 0.274173,
+            "br": 20.7773,
+            "var": 9.40218,
+            "cjs": 0,
+            "kf": 0,
+            "mje": 0.256354,
+            "nr": 2.89455,
+            "rb": 5.83249,
+            "nf": 1.50082,
+            "mjc": 0.239341,
+            "cje": 4.67206e-12,
+            "xti": 1,
+            "vje": 0.404156,
+            "rc": 2.65908,
+            "mjs": 0.502839,
+            "itf": 0.0106626,
+            "ise": 2.29887e-9,
+            "xcjc": 0.79747,
+            "xtf": 0.913471,
+            "eg": 1.04619
+        }
+    }
+]
