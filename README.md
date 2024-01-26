@@ -14,6 +14,13 @@ passed through the pedal and output is saved as wav file. Then new pedal is gene
 and cycle continues. After few minutes you can have tens of pedals generated
 which you can then review and build the ones you like.
 
+# Results
+
+I let the pedalgen run for a two days with different settings and here are few cherry-picked pedals
+out of 600+ pedals it found:
+
+- [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html)
+
 # How to use it
 
 - Install and compile [ngspicejs](https://github.com/dvhx/ngspicejs) (currently only Ubuntu Linux 22.04 is supported)
@@ -186,13 +193,6 @@ found pedal has 0.08 it will be ignored. If the next pedal has thd 0.15 it will 
 saved and next pedal will be only saved if it is higher than 0.15. So instead of 100 pedals
 you will have only few, each with slightly higher thd. If you want to find ever-cleaner
 amp choose "min thd": true.
-
-# Example batches
-
-I let the pedalgen run for a two days with different settings and here are few cherry-picked pedals
-out of 600+ pedals it found:
-
-- [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html)
 
 # Support
 
