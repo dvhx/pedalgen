@@ -5,7 +5,7 @@ Generate random analog guitar pedals in ngspicejs
 # How it works
 
 Pedalgen is a [ngspicejs](https://github.com/dvhx/ngspicejs) script that
-generates random network of passive components (resistors, capacitors,
+generates random network of discrete components (resistors, capacitors,
 inductors, diodes, NPN and PNP transistors) and then simulates them in ngspice.
 Then it performs Transient analysis, measures AC characteristic and FFT and
 compare the results with user-specified requirements. If the pedal matches the
@@ -23,7 +23,7 @@ out of 600+ pedals it found:
 
 # How to use it
 
-- Install and compile [ngspicejs](https://github.com/dvhx/ngspicejs) (currently only Ubuntu Linux 22.04 is supported)
+- Install and compile [ngspicejs](https://github.com/dvhx/ngspicejs) (currently only Ubuntu Linux 24.04 is supported)
 - Download pedalgen
 - Edit pedalgen.json config file
 - Run pedalgen.ngjs script
