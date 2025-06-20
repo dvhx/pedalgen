@@ -1,0 +1,139 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "3.3k",
+        "nets": [
+            "vcc",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "4.7M",
+        "nets": [
+            0,
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "2.2M",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "47k",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "18k",
+        "nets": [
+            "in",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "82n",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "3.3n",
+        "nets": [
+            "net1",
+            "vcc"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N2222A",
+        "nets": [
+            0,
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "2N3904",
+        "nets": [
+            "net2",
+            "out",
+            "net1"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "BC557",
+        "nets": [
+            0,
+            "out",
+            "in"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "LED_BLUE",
+        "nets": [
+            "net1",
+            "in"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

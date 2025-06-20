@@ -1,0 +1,149 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "82k",
+        "nets": [
+            "net5",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "56k",
+        "nets": [
+            "vcc",
+            "net6"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "2.2",
+        "nets": [
+            "net6",
+            "net5"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "6.8k",
+        "nets": [
+            "net2",
+            "net6"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "680n",
+        "nets": [
+            "out",
+            "net6"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "680p",
+        "nets": [
+            "net3",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "220n",
+        "nets": [
+            "net5",
+            "in"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "BC547",
+        "nets": [
+            "net2",
+            "in",
+            "net1"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "BC547",
+        "nets": [
+            0,
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "BC557",
+        "nets": [
+            "net3",
+            "net1",
+            0
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q4",
+        "value": "BC557",
+        "nets": [
+            "net5",
+            "net4",
+            "in"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "FR207",
+        "nets": [
+            "net4",
+            "in"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

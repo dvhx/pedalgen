@@ -1,0 +1,278 @@
+[
+    {
+        "type": "inductor",
+        "attr": {
+            "name": "LS",
+            "anode": "sig",
+            "cathode": "sig1",
+            "l": 0.000001
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RS",
+            "anode": "sig1",
+            "cathode": "sig2",
+            "r": 100
+        }
+    },
+    {
+        "type": "sinewave",
+        "attr": {
+            "delay": 0,
+            "offset": 0,
+            "damping": 0,
+            "phase": 0,
+            "dc_value": 0,
+            "ac_mag": 1,
+            "ac_phase": 0,
+            "name": "V1",
+            "anode": "sig2",
+            "cathode": 0,
+            "v": 0.1,
+            "f": 196
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RP",
+            "anode": "sig",
+            "cathode": 0,
+            "r": 1000000
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CP",
+            "anode": "sig",
+            "cathode": 0,
+            "c": 1e-11
+        }
+    },
+    {
+        "type": "battery",
+        "attr": {
+            "rs": 0,
+            "name": "V2",
+            "anode": "vcc",
+            "cathode": 0,
+            "v": 9
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CIN",
+            "anode": "sig",
+            "cathode": "in",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "COUT",
+            "anode": "out",
+            "cathode": "load",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RLOAD",
+            "anode": "load",
+            "cathode": 0,
+            "r": 50000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R1",
+            "anode": "vcc",
+            "cathode": "in",
+            "r": 2200000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R2",
+            "anode": "net1",
+            "cathode": "net2",
+            "r": 100000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R3",
+            "anode": "out",
+            "cathode": "vcc",
+            "r": 560
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R4",
+            "anode": "out",
+            "cathode": "net3",
+            "r": 22
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C1",
+            "anode": "vcc",
+            "cathode": "net3",
+            "c": 5.6e-11
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C2",
+            "anode": "vcc",
+            "cathode": "net1",
+            "c": 3.9e-9
+        }
+    },
+    {
+        "type": "npn",
+        "attr": {
+            "name": "Q1",
+            "c": "net3",
+            "b": "in",
+            "e": 0,
+            "model": "2N3904"
+        }
+    },
+    {
+        "type": "npn",
+        "attr": {
+            "name": "Q2",
+            "c": "net2",
+            "b": "net3",
+            "e": "out",
+            "model": "2N3904"
+        }
+    },
+    {
+        "type": "pnp",
+        "attr": {
+            "name": "Q3",
+            "c": "net1",
+            "b": "net3",
+            "e": "net2",
+            "model": "2N3906"
+        }
+    },
+    {
+        "type": "pnp",
+        "attr": {
+            "name": "Q4",
+            "c": "vcc",
+            "b": "net2",
+            "e": "vcc",
+            "model": "2N3906"
+        }
+    },
+    {
+        "type": "diode",
+        "attr": {
+            "name": "D1",
+            "anode": "vcc",
+            "cathode": "net2",
+            "model": "1N60P"
+        }
+    },
+    {
+        "type": "bjt_model",
+        "attr": {
+            "name": "2N3904",
+            "kind": "NPN",
+            "bf": 205,
+            "is": 1.26547e-10,
+            "vaf": 998.433,
+            "ptf": 0,
+            "rbm": 0.632479,
+            "vtf": 8.74751,
+            "isc": 2.31414e-9,
+            "vjs": 0.749273,
+            "ne": 3.31282,
+            "re": 0.0000995788,
+            "tr": 6.85197e-8,
+            "irb": 50.5208,
+            "fc": 0.512359,
+            "ikf": 0.0273521,
+            "xtb": 0.100589,
+            "cjc": 3.78079e-12,
+            "tf": 4.23873e-10,
+            "af": 1,
+            "vjc": 0.402828,
+            "nc": 1.99306,
+            "ikr": 0.274173,
+            "br": 20.7773,
+            "var": 9.40218,
+            "cjs": 0,
+            "kf": 0,
+            "mje": 0.256354,
+            "nr": 2.89455,
+            "rb": 5.83249,
+            "nf": 1.50082,
+            "mjc": 0.239341,
+            "cje": 4.67206e-12,
+            "xti": 1,
+            "vje": 0.404156,
+            "rc": 2.65908,
+            "mjs": 0.502839,
+            "itf": 0.0106626,
+            "ise": 2.29887e-9,
+            "xcjc": 0.79747,
+            "xtf": 0.913471,
+            "eg": 1.04619
+        }
+    },
+    {
+        "type": "bjt_model",
+        "attr": {
+            "name": "2N3906",
+            "kind": "PNP",
+            "bf": 404,
+            "vaf": 49.9575,
+            "is": 3.98367e-14,
+            "af": 1,
+            "rc": 2.40615,
+            "ise": 6.97877e-15,
+            "br": 7.54371,
+            "ikf": 0.0199475,
+            "kf": 6.06298e-16,
+            "cjc": 5.86445e-12,
+            "cje": 6.3229e-12,
+            "tf": 5.04327e-10,
+            "tr": 2.31637e-8,
+            "xtb": 1.49677,
+            "ne": 1.17394
+        }
+    },
+    {
+        "type": "diode_model",
+        "attr": {
+            "name": "1N60P",
+            "kind": "DIODE",
+            "is": 1.47521e-8,
+            "n": 0.96776,
+            "rs": 4.0615,
+            "cjo": 6e-12,
+            "bv": 45,
+            "tt": 1e-9,
+            "ibv": 5e-7
+        }
+    }
+]

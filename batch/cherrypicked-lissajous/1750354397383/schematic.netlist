@@ -1,0 +1,120 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "820k",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "150",
+        "nets": [
+            "vcc",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "15",
+        "nets": [
+            0,
+            "net4"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "1k",
+        "nets": [
+            "in",
+            "net3"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "39p",
+        "nets": [
+            "vcc",
+            "net1"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "22p",
+        "nets": [
+            "net1",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "39n",
+        "nets": [
+            "net2",
+            "net1"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N3904",
+        "nets": [
+            "net1",
+            "net2",
+            "net4"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "BC547",
+        "nets": [
+            "out",
+            "net3",
+            "net2"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

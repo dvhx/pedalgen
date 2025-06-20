@@ -1,0 +1,121 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "8.2",
+        "nets": [
+            "net2",
+            "net1"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "1.5M",
+        "nets": [
+            "net2",
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "4.7k",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "2.2",
+        "nets": [
+            "net1",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "15u",
+        "nets": [
+            "net3",
+            "vcc"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "BC547",
+        "nets": [
+            "net1",
+            "net3",
+            0
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q2",
+        "value": "2N3906",
+        "nets": [
+            "net2",
+            "net3",
+            "net2"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "BC557",
+        "nets": [
+            "net2",
+            "net3",
+            "in"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "LED_BLUE",
+        "nets": [
+            "net1",
+            "net2"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

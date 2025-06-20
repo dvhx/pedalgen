@@ -1,0 +1,175 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "2.2k",
+        "nets": [
+            "out",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "2.7M",
+        "nets": [
+            "in",
+            0
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "680k",
+        "nets": [
+            "net2",
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "270",
+        "nets": [
+            "net3",
+            "net2"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R5",
+        "value": "220k",
+        "nets": [
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R6",
+        "value": "56k",
+        "nets": [
+            "in",
+            "vcc"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "2.7u",
+        "nets": [
+            "out",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "560p",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C3",
+        "value": "3.3n",
+        "nets": [
+            "net1",
+            "net2"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C4",
+        "value": "1.2n",
+        "nets": [
+            "out",
+            "in"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N3904",
+        "nets": [
+            "net2",
+            "in",
+            "out"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "2N2222A",
+        "nets": [
+            0,
+            "net3",
+            "out"
+        ]
+    },
+    {
+        "type": "pnp",
+        "name": "Q3",
+        "value": "2N3906",
+        "nets": [
+            "in",
+            "net1",
+            "vcc"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "BAT43",
+        "nets": [
+            "net1",
+            "vcc"
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D2",
+        "value": "1N4148",
+        "nets": [
+            "net3",
+            "out"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

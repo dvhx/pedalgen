@@ -1,0 +1,23 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"in","cathode":"vcc","r":10000});
+resistor({"name":"R2","anode":0,"cathode":"net2","r":2200});
+resistor({"name":"R3","anode":"net1","cathode":"in","r":8.2});
+capacitor({"name":"C1","anode":"in","cathode":"vcc","c":1.0000000000000001e-7});
+capacitor({"name":"C2","anode":"net2","cathode":"vcc","c":4.7e-10});
+npn({"name":"Q1","c":"net2","b":"net1","e":"out","model":"BC547"});
+pnp({"name":"Q2","c":"net2","b":"in","e":"vcc","model":"2N3906"});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"2N3906","kind":"PNP","bf":404,"vaf":49.9575,"is":3.98367e-14,"af":1,"rc":2.40615,"ise":6.97877e-15,"br":7.54371,"ikf":0.0199475,"kf":6.06298e-16,"cjc":5.86445e-12,"cje":6.3229e-12,"tf":5.04327e-10,"tr":2.31637e-8,"xtb":1.49677,"ne":1.17394});

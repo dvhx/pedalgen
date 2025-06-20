@@ -1,0 +1,32 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"in","cathode":"net4","r":12});
+resistor({"name":"R2","anode":"out","cathode":"net3","r":120000});
+resistor({"name":"R3","anode":"net1","cathode":"net3","r":47});
+resistor({"name":"R4","anode":0,"cathode":"net4","r":470000});
+resistor({"name":"R5","anode":"net4","cathode":"net3","r":15000});
+capacitor({"name":"C1","anode":"out","cathode":"in","c":1e-10});
+capacitor({"name":"C2","anode":"vcc","cathode":"net4","c":6.8e-8});
+npn({"name":"Q1","c":"out","b":"net1","e":"vcc","model":"BC547"});
+pnp({"name":"Q2","c":0,"b":"net2","e":"net3","model":"2N3906"});
+pnp({"name":"Q3","c":"net1","b":"net4","e":"vcc","model":"BC557"});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"2N3906","kind":"PNP","bf":404,"vaf":49.9575,"is":3.98367e-14,"af":1,"rc":2.40615,"ise":6.97877e-15,"br":7.54371,"ikf":0.0199475,"kf":6.06298e-16,"cjc":5.86445e-12,"cje":6.3229e-12,"tf":5.04327e-10,"tr":2.31637e-8,"xtb":1.49677,"ne":1.17394});
+bjt_model({"name":"BC557","kind":"PNP","bf":333,"is":1.16271e-14,"vaf":84.3249,"nf":0.989742,"ne":1.41235,"rc":0.960001,"rb":0.202287,"re":0.399351,"cje":1.59939e-11,"cjc":1.05351e-11,"br":13.1312,"ikf":0.100695,"tf":4.98737e-10,"vjc":0.563043,"ikr":0.0120877,"nc":1.11161,"isc":1.44419e-14,"mjc":0.413293,"var":8.16837,"ise":5.01187e-14,"tr":7.33771e-8,"nr":0.999585});
+audio({"delay":0,"offset":0,"name":"V1","anode":"sig2","cathode":0,"filename":"../../../wav/chord.wav","v":0.1});
+echo("running tran");
+var t = tran().interval(3.5).step("20.833u").run();
+echo("saving wav");
+file_write_wav("output.wav", t.data.time, t.data["V(load)"], undefined);
+echo("done");

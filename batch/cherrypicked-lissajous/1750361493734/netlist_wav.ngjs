@@ -1,0 +1,34 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net5","cathode":"out","r":82000});
+resistor({"name":"R2","anode":"vcc","cathode":"net6","r":56000});
+resistor({"name":"R3","anode":"net6","cathode":"net5","r":2.2});
+resistor({"name":"R4","anode":"net2","cathode":"net6","r":6800});
+capacitor({"name":"C1","anode":"out","cathode":"net6","c":6.800000000000001e-7});
+capacitor({"name":"C2","anode":"net3","cathode":"out","c":6.8e-10});
+capacitor({"name":"C3","anode":"net5","cathode":"in","c":2.2e-7});
+npn({"name":"Q1","c":"net2","b":"in","e":"net1","model":"BC547"});
+npn({"name":"Q2","c":0,"b":"in","e":"net2","model":"BC547"});
+pnp({"name":"Q3","c":"net3","b":"net1","e":0,"model":"BC557"});
+pnp({"name":"Q4","c":"net5","b":"net4","e":"in","model":"BC557"});
+diode({"name":"D1","anode":"net4","cathode":"in","model":"FR207"});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"BC557","kind":"PNP","bf":333,"is":1.16271e-14,"vaf":84.3249,"nf":0.989742,"ne":1.41235,"rc":0.960001,"rb":0.202287,"re":0.399351,"cje":1.59939e-11,"cjc":1.05351e-11,"br":13.1312,"ikf":0.100695,"tf":4.98737e-10,"vjc":0.563043,"ikr":0.0120877,"nc":1.11161,"isc":1.44419e-14,"mjc":0.413293,"var":8.16837,"ise":5.01187e-14,"tr":7.33771e-8,"nr":0.999585});
+diode_model({"name":"FR207","kind":"DIODE","is":4.19814e-10,"n":1.45297,"rs":5.25472,"bv":1000,"ibv":5,"cjo":3e-11,"vj":0.59,"m":0.333,"tt":5.000000000000001e-7});
+audio({"delay":0,"offset":0,"name":"V1","anode":"sig2","cathode":0,"filename":"../../../wav/chord.wav","v":0.1});
+echo("running tran");
+var t = tran().interval(3.5).step("20.833u").run();
+echo("saving wav");
+file_write_wav("output.wav", t.data.time, t.data["V(load)"], undefined);
+echo("done");

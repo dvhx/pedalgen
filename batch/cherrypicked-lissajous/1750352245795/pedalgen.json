@@ -1,0 +1,157 @@
+{
+    "seed": 0,
+    "generate_how_many_pedals": 20,
+    "input": {
+        "amplitude": 0.1,
+        "frequency": 196,
+        "ls": 0.000001,
+        "rs": 100,
+        "cp": "10p",
+        "rp": "1M",
+        "capacitor": "10u",
+        "wav": "wav/chord.wav"
+    },
+    "output": {
+        "capacitor": "10u",
+        "load": "50k"
+    },
+    "supply": {
+        "voltage": 9
+    },
+    "complexity": {
+        "net": {
+            "min": 2,
+            "max": 6
+        },
+        "resistor": {
+            "min": 2,
+            "max": 6,
+            "pins": 2,
+            "tune": true,
+            "prefix": "R",
+            "values": "series_e12",
+            "values_min": "1",
+            "values_max": "10M"
+        },
+        "capacitor": {
+            "min": 1,
+            "max": 6,
+            "pins": 2,
+            "tune": true,
+            "prefix": "C",
+            "values": "series_e12",
+            "values_min": "10p",
+            "values_max": "470u"
+        },
+        "transistor_npn": {
+            "min": 1,
+            "max": 2,
+            "pins": 3,
+            "tune": false,
+            "prefix": "Q",
+            "values": [
+                "2N3904",
+                "BC547",
+                "2N2222A"
+            ]
+        },
+        "transistor_pnp": {
+            "min": 0,
+            "max": 2,
+            "pins": 3,
+            "tune": false,
+            "prefix": "Q",
+            "values": [
+                "2N3906",
+                "BC557"
+            ]
+        },
+        "diode": {
+            "min": 0,
+            "max": 2,
+            "pins": 2,
+            "tune": false,
+            "prefix": "D",
+            "values": [
+                "1N34A",
+                "1N4148",
+                "1N5819",
+                "1N60P",
+                "1N5399",
+                "FR207",
+                "FR107",
+                "1N4007",
+                "BAT43",
+                "LED_GREEN",
+                "LED_BLUE",
+                "LED_RED",
+                "LED_YELLOW",
+                "LED_WHITE"
+            ]
+        },
+        "inductor": {
+            "min": 0,
+            "max": 0,
+            "pins": 2,
+            "tune": true,
+            "prefix": "L",
+            "values": "series_e12",
+            "values_min": "1u",
+            "values_max": "100m"
+        }
+    },
+    "ac": {
+        "fstart": 16,
+        "fstop": "10k"
+    },
+    "tran": {
+        "start": 0,
+        "step": "20u",
+        "interval": "20m"
+    },
+    "fft": {
+        "interval": 0.3,
+        "fstop": "2k",
+        "harmonics": 10
+    },
+    "constraints": {
+        "gain": [
+            {
+                "frequency": 196,
+                "min": 1.1,
+                "max": 99999
+            },
+            {
+                "frequency": 1000,
+                "min": 0.1,
+                "max": 99999
+            }
+        ],
+        "current": {
+            "min": "40u",
+            "max": "20m"
+        },
+        "thd": {
+            "min": 0.05,
+            "max": 99999
+        },
+        "even": {
+            "min": 0,
+            "max": 1
+        },
+        "odd": {
+            "min": 0,
+            "max": 1
+        }
+    },
+    "optimize": {
+        "max gain": false,
+        "min current": false,
+        "min thd": false,
+        "max thd": false,
+        "max even": false,
+        "max odd": false,
+        "max thd*even": false,
+        "max thd*odd": false
+    }
+}

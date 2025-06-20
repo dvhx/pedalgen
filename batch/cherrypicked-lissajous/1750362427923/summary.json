@@ -1,0 +1,11 @@
+{
+    "timestamp": 1750362427923,
+    "path": "batch/2025-06-19--19-38-17/1750362427923/",
+    "folder": "1750362427923/",
+    "current": 0.0009751071330612248,
+    "gain": 2.781633269142803,
+    "thd": 0.31122372197958703,
+    "even": 0.7246397390740834,
+    "odd": 0.2753602609259165,
+    "schematic": "https://dvhx.github.io/stripboard2schematic/schematic.html?share=battery,V2,9V,vcc,0|capacitor,CIN,10u,sig,in|capacitor,COUT,10u,out,load|resistor,R1,4.7M,0,in|resistor,R2,10k,net1,0|capacitor,C1,3.9n,vcc,out|capacitor,C2,6.8u,0,out|transistor_npn,Q1,BC547,out,in,net1|transistor_npn,Q2,2N3904,net2,net1,vcc|transistor_pnp,Q3,BC557,0,out,out|transistor_pnp,Q4,BC557,net1,in,vcc|diode,D1,1N60P,net2,net1|diode,D2,BAT43,out,net1|ground,Ground,,0|connector,IN,,sig|connector,OUT,,load"
+}

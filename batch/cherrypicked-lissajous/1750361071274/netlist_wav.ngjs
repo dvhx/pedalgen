@@ -1,0 +1,33 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net2","cathode":"in","r":10000000});
+resistor({"name":"R2","anode":"out","cathode":"in","r":330000});
+resistor({"name":"R3","anode":0,"cathode":"net2","r":2200000});
+resistor({"name":"R4","anode":"net1","cathode":"vcc","r":27000});
+capacitor({"name":"C1","anode":"net2","cathode":"in","c":1.8000000000000002e-7});
+capacitor({"name":"C2","anode":0,"cathode":"net1","c":3.3e-7});
+capacitor({"name":"C3","anode":0,"cathode":"out","c":6.8e-10});
+capacitor({"name":"C4","anode":"in","cathode":0,"c":8.199999999999999e-9});
+capacitor({"name":"C5","anode":"vcc","cathode":"out","c":6.800000000000001e-7});
+capacitor({"name":"C6","anode":"net2","cathode":"vcc","c":6.8e-11});
+npn({"name":"Q1","c":0,"b":"in","e":"out","model":"2N2222A"});
+diode({"name":"D1","anode":"out","cathode":"net1","model":"LED_GREEN"});
+bjt_model({"name":"2N2222A","kind":"NPN","is":1.44079e-14,"bf":256,"vaf":75.0132,"br":6.12635,"cjc":7.35995e-12,"cje":2.18677e-11,"eg":1.11244,"fc":0.505518,"ikf":0.287123,"ikr":0,"isc":0,"ise":1.44017e-14,"itf":0.595473,"mjc":0.341544,"mje":0.379995,"nc":2,"ne":1.2989,"rb":10,"rc":1,"tf":4.07223e-10,"tr":4.70823e-8,"vjc":0.742352,"vje":0.744323,"vtf":1.72447,"xtb":1.5103,"xtf":3,"xti":3});
+diode_model({"name":"LED_GREEN","kind":"DIODE","is":4.37561e-22,"n":1.74172,"rs":0.0204277,"bv":5,"ibv":0.00009999999999999999,"cjo":3.5e-11,"vj":1.8,"m":0.23,"fc":0.3,"tt":0.000002,"eg":1.11,"xti":3,"kf":0,"af":1});
+audio({"delay":0,"offset":0,"name":"V1","anode":"sig2","cathode":0,"filename":"../../../wav/chord.wav","v":0.1});
+echo("running tran");
+var t = tran().interval(3.5).step("20.833u").run();
+echo("saving wav");
+file_write_wav("output.wav", t.data.time, t.data["V(load)"], undefined);
+echo("done");

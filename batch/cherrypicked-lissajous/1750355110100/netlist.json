@@ -1,0 +1,263 @@
+[
+    {
+        "type": "inductor",
+        "attr": {
+            "name": "LS",
+            "anode": "sig",
+            "cathode": "sig1",
+            "l": 0.000001
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RS",
+            "anode": "sig1",
+            "cathode": "sig2",
+            "r": 100
+        }
+    },
+    {
+        "type": "sinewave",
+        "attr": {
+            "delay": 0,
+            "offset": 0,
+            "damping": 0,
+            "phase": 0,
+            "dc_value": 0,
+            "ac_mag": 1,
+            "ac_phase": 0,
+            "name": "V1",
+            "anode": "sig2",
+            "cathode": 0,
+            "v": 0.1,
+            "f": 196
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RP",
+            "anode": "sig",
+            "cathode": 0,
+            "r": 1000000
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CP",
+            "anode": "sig",
+            "cathode": 0,
+            "c": 1e-11
+        }
+    },
+    {
+        "type": "battery",
+        "attr": {
+            "rs": 0,
+            "name": "V2",
+            "anode": "vcc",
+            "cathode": 0,
+            "v": 9
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "CIN",
+            "anode": "sig",
+            "cathode": "in",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "COUT",
+            "anode": "out",
+            "cathode": "load",
+            "c": 0.000009999999999999999
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "RLOAD",
+            "anode": "load",
+            "cathode": 0,
+            "r": 50000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R1",
+            "anode": "net2",
+            "cathode": "net1",
+            "r": 3300000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R2",
+            "anode": "net3",
+            "cathode": 0,
+            "r": 100000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R3",
+            "anode": "in",
+            "cathode": "net3",
+            "r": 1000
+        }
+    },
+    {
+        "type": "resistor",
+        "attr": {
+            "name": "R4",
+            "anode": "net4",
+            "cathode": "in",
+            "r": 5600
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C1",
+            "anode": "net2",
+            "cathode": "vcc",
+            "c": 3.3e-7
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C2",
+            "anode": "net3",
+            "cathode": "net1",
+            "c": 1.2e-10
+        }
+    },
+    {
+        "type": "capacitor",
+        "attr": {
+            "name": "C4",
+            "anode": "out",
+            "cathode": "net4",
+            "c": 3.9000000000000005e-8
+        }
+    },
+    {
+        "type": "npn",
+        "attr": {
+            "name": "Q1",
+            "c": "net1",
+            "b": "vcc",
+            "e": "out",
+            "model": "2N2222A"
+        }
+    },
+    {
+        "type": "pnp",
+        "attr": {
+            "name": "Q2",
+            "c": "net4",
+            "b": "net3",
+            "e": "vcc",
+            "model": "BC557"
+        }
+    },
+    {
+        "type": "diode",
+        "attr": {
+            "name": "D1",
+            "anode": "net4",
+            "cathode": "out",
+            "model": "FR107"
+        }
+    },
+    {
+        "type": "bjt_model",
+        "attr": {
+            "name": "2N2222A",
+            "kind": "NPN",
+            "is": 1.44079e-14,
+            "bf": 256,
+            "vaf": 75.0132,
+            "br": 6.12635,
+            "cjc": 7.35995e-12,
+            "cje": 2.18677e-11,
+            "eg": 1.11244,
+            "fc": 0.505518,
+            "ikf": 0.287123,
+            "ikr": 0,
+            "isc": 0,
+            "ise": 1.44017e-14,
+            "itf": 0.595473,
+            "mjc": 0.341544,
+            "mje": 0.379995,
+            "nc": 2,
+            "ne": 1.2989,
+            "rb": 10,
+            "rc": 1,
+            "tf": 4.07223e-10,
+            "tr": 4.70823e-8,
+            "vjc": 0.742352,
+            "vje": 0.744323,
+            "vtf": 1.72447,
+            "xtb": 1.5103,
+            "xtf": 3,
+            "xti": 3
+        }
+    },
+    {
+        "type": "bjt_model",
+        "attr": {
+            "name": "BC557",
+            "kind": "PNP",
+            "bf": 333,
+            "is": 1.16271e-14,
+            "vaf": 84.3249,
+            "nf": 0.989742,
+            "ne": 1.41235,
+            "rc": 0.960001,
+            "rb": 0.202287,
+            "re": 0.399351,
+            "cje": 1.59939e-11,
+            "cjc": 1.05351e-11,
+            "br": 13.1312,
+            "ikf": 0.100695,
+            "tf": 4.98737e-10,
+            "vjc": 0.563043,
+            "ikr": 0.0120877,
+            "nc": 1.11161,
+            "isc": 1.44419e-14,
+            "mjc": 0.413293,
+            "var": 8.16837,
+            "ise": 5.01187e-14,
+            "tr": 7.33771e-8,
+            "nr": 0.999585
+        }
+    },
+    {
+        "type": "diode_model",
+        "attr": {
+            "name": "FR107",
+            "kind": "DIODE",
+            "is": 8.92157e-10,
+            "n": 1.55229,
+            "rs": 6.23061,
+            "bv": 1000,
+            "ibv": 0.0000049999999999999996,
+            "cjo": 1.5e-11,
+            "vj": 0.58,
+            "m": 0.333,
+            "tt": 5.000000000000001e-7
+        }
+    }
+]

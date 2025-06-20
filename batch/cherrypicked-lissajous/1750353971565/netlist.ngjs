@@ -1,0 +1,28 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net2","cathode":"vcc","r":47000});
+resistor({"name":"R2","anode":"out","cathode":"in","r":22000});
+resistor({"name":"R3","anode":0,"cathode":"out","r":82000});
+resistor({"name":"R4","anode":"net1","cathode":0,"r":6.8});
+resistor({"name":"R5","anode":"in","cathode":"vcc","r":220000});
+capacitor({"name":"C1","anode":"in","cathode":"out","c":2.2000000000000002e-8});
+capacitor({"name":"C2","anode":"out","cathode":"net2","c":0.0000012});
+npn({"name":"Q1","c":"net1","b":"in","e":"net2","model":"2N2222A"});
+pnp({"name":"Q2","c":"net2","b":"net3","e":0,"model":"2N3906"});
+pnp({"name":"Q3","c":0,"b":"in","e":"net3","model":"2N3906"});
+diode({"name":"D1","anode":"net1","cathode":"in","model":"1N4148"});
+bjt_model({"name":"2N2222A","kind":"NPN","is":1.44079e-14,"bf":256,"vaf":75.0132,"br":6.12635,"cjc":7.35995e-12,"cje":2.18677e-11,"eg":1.11244,"fc":0.505518,"ikf":0.287123,"ikr":0,"isc":0,"ise":1.44017e-14,"itf":0.595473,"mjc":0.341544,"mje":0.379995,"nc":2,"ne":1.2989,"rb":10,"rc":1,"tf":4.07223e-10,"tr":4.70823e-8,"vjc":0.742352,"vje":0.744323,"vtf":1.72447,"xtb":1.5103,"xtf":3,"xti":3});
+bjt_model({"name":"2N3906","kind":"PNP","bf":404,"vaf":49.9575,"is":3.98367e-14,"af":1,"rc":2.40615,"ise":6.97877e-15,"br":7.54371,"ikf":0.0199475,"kf":6.06298e-16,"cjc":5.86445e-12,"cje":6.3229e-12,"tf":5.04327e-10,"tr":2.31637e-8,"xtb":1.49677,"ne":1.17394});
+diode_model({"name":"1N4148","kind":"DIODE","is":4.7582e-9,"n":1.95969,"rs":2.14024,"cjo":4e-12,"vj":0.6,"tt":6e-9,"m":0.45,"bv":100});

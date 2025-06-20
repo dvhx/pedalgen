@@ -1,0 +1,120 @@
+[
+    {
+        "type": "battery",
+        "name": "V2",
+        "value": "9V",
+        "nets": [
+            "vcc",
+            0
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "CIN",
+        "value": "10u",
+        "nets": [
+            "sig",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "COUT",
+        "value": "10u",
+        "nets": [
+            "out",
+            "load"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R1",
+        "value": "220k",
+        "nets": [
+            0,
+            "vcc"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R2",
+        "value": "5.6k",
+        "nets": [
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R3",
+        "value": "68k",
+        "nets": [
+            0,
+            "out"
+        ]
+    },
+    {
+        "type": "resistor",
+        "name": "R4",
+        "value": "330k",
+        "nets": [
+            "vcc",
+            "in"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C1",
+        "value": "22n",
+        "nets": [
+            "vcc",
+            "out"
+        ]
+    },
+    {
+        "type": "capacitor",
+        "name": "C2",
+        "value": "560p",
+        "nets": [
+            "net2",
+            0
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q1",
+        "value": "2N3904",
+        "nets": [
+            "vcc",
+            "in",
+            "net2"
+        ]
+    },
+    {
+        "type": "npn",
+        "name": "Q2",
+        "value": "2N2222A",
+        "nets": [
+            "net2",
+            "in",
+            0
+        ]
+    },
+    {
+        "type": "diode",
+        "name": "D1",
+        "value": "1N4148",
+        "nets": [
+            "net2",
+            "out"
+        ]
+    },
+    {
+        "type": "ground",
+        "name": "Ground",
+        "value": "",
+        "nets": [
+            0
+        ]
+    }
+]

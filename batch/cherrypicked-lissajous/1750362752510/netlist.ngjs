@@ -1,0 +1,30 @@
+#!/usr/bin/env ngspicejs
+// ngspicejs script
+// linter: ngspicejs-lint
+"use strict";
+
+inductor({"name":"LS","anode":"sig","cathode":"sig1","l":0.000001});
+resistor({"name":"RS","anode":"sig1","cathode":"sig2","r":100});
+sinewave({"delay":0,"offset":0,"damping":0,"phase":0,"dc_value":0,"ac_mag":1,"ac_phase":0,"name":"V1","anode":"sig2","cathode":0,"v":0.1,"f":196});
+resistor({"name":"RP","anode":"sig","cathode":0,"r":1000000});
+capacitor({"name":"CP","anode":"sig","cathode":0,"c":1e-11});
+battery({"rs":0,"name":"V2","anode":"vcc","cathode":0,"v":9});
+capacitor({"name":"CIN","anode":"sig","cathode":"in","c":0.000009999999999999999});
+capacitor({"name":"COUT","anode":"out","cathode":"load","c":0.000009999999999999999});
+resistor({"name":"RLOAD","anode":"load","cathode":0,"r":50000});
+resistor({"name":"R1","anode":"net2","cathode":0,"r":680});
+resistor({"name":"R2","anode":"net1","cathode":0,"r":1200000});
+resistor({"name":"R3","anode":"net1","cathode":"net2","r":1200});
+resistor({"name":"R4","anode":"vcc","cathode":"out","r":5600000});
+capacitor({"name":"C1","anode":"in","cathode":0,"c":8.2e-11});
+capacitor({"name":"C2","anode":"in","cathode":"net1","c":1.2e-10});
+capacitor({"name":"C3","anode":"net1","cathode":"out","c":1.2e-9});
+capacitor({"name":"C4","anode":0,"cathode":"net1","c":1.8e-11});
+npn({"name":"Q1","c":"net1","b":"out","e":"in","model":"BC547"});
+npn({"name":"Q2","c":"in","b":"out","e":"net2","model":"2N2222A"});
+pnp({"name":"Q3","c":"vcc","b":"in","e":"net2","model":"2N3906"});
+diode({"name":"D1","anode":"net2","cathode":0,"model":"FR207"});
+bjt_model({"name":"BC547","kind":"NPN","bf":327,"is":5.1033e-14,"vaf":155.321,"nf":1,"rc":0.361432,"tr":1.38312e-7,"nr":1,"var":24.084,"ise":1.55821e-11,"ikr":0.454978,"tf":6.17167e-10,"ikf":0.303563,"re":0.912819,"rb":3.61802,"cje":2.10332e-11,"ne":2,"br":4.04442,"xtb":1.51577,"cjc":8.30955e-12});
+bjt_model({"name":"2N2222A","kind":"NPN","is":1.44079e-14,"bf":256,"vaf":75.0132,"br":6.12635,"cjc":7.35995e-12,"cje":2.18677e-11,"eg":1.11244,"fc":0.505518,"ikf":0.287123,"ikr":0,"isc":0,"ise":1.44017e-14,"itf":0.595473,"mjc":0.341544,"mje":0.379995,"nc":2,"ne":1.2989,"rb":10,"rc":1,"tf":4.07223e-10,"tr":4.70823e-8,"vjc":0.742352,"vje":0.744323,"vtf":1.72447,"xtb":1.5103,"xtf":3,"xti":3});
+bjt_model({"name":"2N3906","kind":"PNP","bf":404,"vaf":49.9575,"is":3.98367e-14,"af":1,"rc":2.40615,"ise":6.97877e-15,"br":7.54371,"ikf":0.0199475,"kf":6.06298e-16,"cjc":5.86445e-12,"cje":6.3229e-12,"tf":5.04327e-10,"tr":2.31637e-8,"xtb":1.49677,"ne":1.17394});
+diode_model({"name":"FR207","kind":"DIODE","is":4.19814e-10,"n":1.45297,"rs":5.25472,"bv":1000,"ibv":5,"cjo":3e-11,"vj":0.59,"m":0.333,"tt":5.000000000000001e-7});
