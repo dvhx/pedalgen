@@ -20,6 +20,7 @@ I let the pedalgen run for a two days with different settings and here are few c
 out of 600+ pedals it found:
 
 - [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html)
+- [batch/cherrypicked-lissajous/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked-lissajous/index.html) - second batch of 53 pedals with lissajous curves (x=input, y=output)
 
 # How to use it
 
