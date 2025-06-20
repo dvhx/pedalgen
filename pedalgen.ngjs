@@ -1,5 +1,5 @@
 #!/usr/bin/env ngspicejs
-// Pedalgen v0.1 - generate random guitar pedals
+// Pedalgen v0.2 - generate random guitar pedals
 // linter: ngspicejs-lint
 "use strict";
 
@@ -20,12 +20,15 @@ var generate_pedal = include('src/generate_pedal.js');
 var build_circuit = include('src/build_circuit.js');
 var elements_to_short_bom = include('src/elements_to_short_bom.js');
 var optimize_one = include('src/optimize_one.js');
+var pearson = include('src/pearson.js');
+var lissajous = include('src/lissajous.js');
 
 ignore(cache_element_by_name, cache_net_element_pin, cache_net_element_type,
     cache_edges, edge_exists, remove_parallel_capacitors, remove_series);
 
 // variables
 var config = file_read_json('pedalgen.json'); // config file from current directory
+var config_orig = JSON.parse(JSON.stringify(config));
 var reason = tally('Reason');   // Why was generated pedal wrong
 var batch = 'batch/' + (new Date()).toISOString().substr(0, 19).replace('T', '--').replace(/[\:]+/g, '-') + '/'; // batch/2023-12-21--08-30-57/
 dir_create(batch);
@@ -48,7 +51,7 @@ if (config.seed > 0) {
 // header of index.html
 var html = [];
 html.push('<style>');
-html.push('img.chart {width: 360px; height: 150px;}');
+html.push('img.chart {width: 300px; height: 150px;}');
 html.push('</style>');
 html.push('');
 html.push('<script>');
@@ -69,7 +72,7 @@ html.push('    e.style.backgroundColor = "skyblue";');
 html.push('});');
 html.push('</script>');
 html.push('');
-html.push('<h1>pedalgen v0.1 - ' + batch + '</h1>');
+html.push('<h1>pedalgen v0.2 - ' + batch + '</h1>');
 
 // main loop
 var pedals_found = 0;
@@ -171,9 +174,9 @@ while (true) {
     }
 
     // show charts
-    t.chart('V(load)', {width: 360, height: 150});
-    f.chart_db('V(load)', {width: 360, height: 150});
-    a.chart('V(load)', {width: 360, height: 150});
+    t.chart('V(load)', {width: 300, height: 150});
+    f.chart_db('V(load)', {width: 300, height: 150});
+    a.chart('V(load)', {width: 300, height: 150});
 
     // create pedal folder
     var timestamp = Date.now();
@@ -185,6 +188,9 @@ while (true) {
     t.last_chart.gif(path + 'tran.gif');
     f.last_chart.gif(path + 'fft.gif');
     a.last_chart.gif(path + 'ac.gif');
+    if (config.lissajous) {
+        lissajous(t, 'V(sig2)', 'V(load)').show().gif(path + 'lissajous.gif');
+    }
 
     // write other files
     file_write_json(path + 'netlist.json', netlist_export(), 4);
@@ -253,9 +259,15 @@ while (true) {
     html.push('  <img class="chart" src="' + summary.folder + 'tran.gif">');
     html.push('  <img class="chart" src="' + summary.folder + 'fft.gif">');
     html.push('  <img class="chart" src="' + summary.folder + 'ac.gif" title="' + ac_title + '">');
+    if (config.lissajous) {
+        html.push('  <img class="chart" style="width:150px;height:150px;" src="' + summary.folder + 'lissajous.gif" title="lissajous (x=input (node sig), y=output), red=original output, green=with phase shift removed">');
+    }
     html.push('</div>');
     html.push('<hr>');
     file_write(batch + 'index.html', html.join('\n'));
+
+    // save config as well in case I do the "cherrypicked" folders with different configs
+    file_write_json(path + 'pedalgen.json', config_orig, 4);
 
     // beep
     echo('pedal ' + (pedals_found + 1) + '/' + config.generate_how_many_pedals + ' found');
