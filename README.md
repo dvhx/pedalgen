@@ -19,8 +19,8 @@ which you can then review and build the ones you like.
 I let the pedalgen run for a two days with different settings and here are few cherry-picked pedals
 out of 600+ pedals it found:
 
-- [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html)
-- [batch/cherrypicked-lissajous/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked-lissajous/index.html) - second batch of 53 pedals with lissajous curves (x=input, y=output)
+- [batch/cherrypicked/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked/index.html) - first batch of 30 pedals
+- [batch/cherrypicked-lissajous/index.html](https://dvhx.github.io/pedalgen/batch/cherrypicked-lissajous/index.html) - second batch of 52 pedals with lissajous curves
 
 # How to use it
 
@@ -132,9 +132,19 @@ keep the step at 20us or lower (1/48000 = 20.833us).
     },
 ```
 
-"fft" defined the FFT analysis, "interval" is duration used for FFT, the longer the
+"fft" defines the FFT analysis, "interval" is duration used for FFT, the longer the
 duration the narrower the peaks will be, "fstop" is maximal frequency and "harmonics"
 is number of harmonics used to calculate THD.
+
+```json
+    "lissajous": true,
+```
+
+If "lissajous" is true each pedal will have Lissajous curve generated where
+X axis is input signal and Y axis is output signal. Lissajous curve is red, if green curve
+is present then it represents Y signal with phase shift removed. Generally straigt 
+lines are amplifiers, bent lines are distortions, loops are phase shifts, and drifting 
+curves or spirals are same capacitor being slowly charged somewhere.
 
 ```json
     "constraints": {
